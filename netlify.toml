@@ -15,6 +15,17 @@
   # vigilant, igual que SMTP_USER i CORREU_DESTI.
   SECRETS_SCAN_OMIT_KEYS = "SMTP_HOST"
 
+# El lloc també es podria veure sencer per l'adreça que Netlify li dona de
+# fàbrica, i llavors hi hauria dues webs iguals a internet i Google no sabria
+# quina és la bona. Netlify redirigeix sol entre l'apex i el www, però des del
+# seu subdomini no: s'hi ha de posar a mà. Va primer de tot perquè ha d'atrapar
+# qualsevol adreça, també les de sota.
+[[redirects]]
+  from = "https://artaneris.netlify.app/*"
+  to = "https://artaneris.com/:splat"
+  status = 301
+  force = true
+
 # El formulari crida /api/contacte, que és una adreça neta i del mateix domini:
 # així no hi ha CORS pel mig. Ha d'anar abans del comodí de sota, que si no se
 # l'empassa ell.
