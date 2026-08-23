@@ -1,5 +1,14 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+# Material de referència del disseny: es queda al disc i no es puja.
+# Els originals de les fotografies, en canvi, sí que van al repositori:
+# scripts/imatges.mjs els llegeix de /imatges per generar /public/img.
+/recursos
+
+# Imatges generades a partir de /imatges (npm run imatges)
+/public/img/*.webp
+/public/img/social.jpg
+
 # Compiled output
 /dist
 /tmp
@@ -27,6 +36,12 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+# Les credencials del correu del formulari: no han de sortir d'aquí mai.
+.env
+
+# Estat local de netlify dev
+/.netlify
 
 # Miscellaneous
 /.angular/cache

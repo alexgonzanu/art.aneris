@@ -1,0 +1,75 @@
+<section class="proces seccio" id="com-funciona">
+  <div class="shell shell--estret">
+    <header class="proces__intro" appReveal>
+      <p class="eyebrow eyebrow--sage">{{ 'proces.eyebrow' | translate }}</p>
+
+      <h2 class="titol">{{ 'proces.titol' | translate }}</h2>
+    </header>
+
+    <ol class="linia" appProgres>
+      <li class="fita">
+        <div class="fita__marca">
+          <span class="fita__node">01</span>
+        </div>
+
+        <h3 class="fita__titol">{{ 'proces.partida.titol' | translate }}</h3>
+        <p class="fita__detall">{{ 'proces.partida.detall' | translate }}</p>
+
+        <div class="fita__cos">
+          <div class="fita__cita">
+            <div class="bombolla">
+              <p class="bombolla__text">{{ 'proces.partida.cita' | translate }}</p>
+              <span class="bombolla__hora">{{ 'proces.partida.hora' | translate }}</span>
+            </div>
+          </div>
+
+          <p class="fita__peu">{{ 'proces.partida.peu' | translate }}</p>
+        </div>
+      </li>
+
+      <li class="fita">
+        <div class="fita__marca">
+          <span class="fita__node">02</span>
+        </div>
+
+        <h3 class="fita__titol">{{ 'proces.interpretacio.titol' | translate }}</h3>
+        <p class="fita__detall">{{ 'proces.interpretacio.detall' | translate }}</p>
+
+        <div class="fita__cos">
+          <figure class="fita__media">
+            <img
+              ngSrc="obra-petjades-mar"
+              fill
+              sizes="(min-width: 1024px) 30vw, 100vw"
+              [alt]="'proces.interpretacio.alt' | translate"
+            />
+          </figure>
+
+          <p class="fita__peu">{{ 'proces.interpretacio.peu' | translate }}</p>
+        </div>
+      </li>
+
+      <li class="fita">
+        <div class="fita__marca">
+          <span class="fita__node">03</span>
+        </div>
+
+        <h3 class="fita__titol">{{ 'proces.obra.titol' | translate }}</h3>
+        <p class="fita__detall">{{ 'proces.obra.detall' | translate }}</p>
+
+        <div class="fita__cos fita__cos--fosc">
+          <figure class="fita__media">
+            <img
+              ngSrc="obra-mar-sala"
+              fill
+              sizes="(min-width: 1024px) 30vw, 100vw"
+              [alt]="'proces.obra.alt' | translate"
+            />
+          </figure>
+
+          <p class="fita__peu">{{ 'proces.obra.peu' | translate }}</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

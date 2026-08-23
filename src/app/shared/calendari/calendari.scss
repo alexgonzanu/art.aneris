@@ -1,0 +1,187 @@
+/* El calendari
+ * ===========================================================================
+ * Mateixos materials que la resta de la pàgina: paper, terracota i la vora
+ * fina de sempre. El camp tancat és igual que els altres controls del
+ * formulari —hereta .camp__control— i el panell s'obre just a sota.
+ */
+
+:host {
+  position: relative;
+  display: block;
+}
+
+.calendari__camp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Mentre no hi ha data, el text fa de marcador de posició. */
+.calendari__camp--buit {
+  color: rgb(43 38 34 / 35%);
+}
+
+.calendari__icona {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: none;
+  color: var(--clay);
+}
+
+.calendari__panell {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  width: min(20rem, 100%);
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--paper);
+  box-shadow: var(--ombra-suau);
+}
+
+.calendari__capcalera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.calendari__mes {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+
+  /* El nom del mes arriba en minúscula del format català. */
+  text-transform: capitalize;
+}
+
+.calendari__fletxa {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  color: rgb(43 38 34 / 55%);
+  font-size: 1.25rem;
+  line-height: 1;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.calendari__fletxa:hover {
+  background: var(--sand);
+  color: var(--ink);
+}
+
+.calendari__graella {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendari__graella th {
+  padding-bottom: 0.5rem;
+  color: rgb(43 38 34 / 40%);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* El nom sencer del dia hi és per al lector de pantalla; a la vista només hi
+ * caben dues lletres.
+ */
+.calendari__nom-dia {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.calendari__dia {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ink);
+  font-size: 0.85rem;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.calendari__dia:hover:not(:disabled) {
+  background: var(--sand);
+}
+
+/* Els dies del mes del costat i els que ja han passat hi són perquè la graella
+ * quedi sencera, però no criden l'atenció.
+ */
+.calendari__dia--fora {
+  color: rgb(43 38 34 / 30%);
+}
+
+.calendari__dia:disabled {
+  color: rgb(43 38 34 / 20%);
+  cursor: not-allowed;
+}
+
+/* Avui va marcat amb un punt a sota: es reconeix sense competir amb el dia
+ * triat, que és qui es pinta.
+ */
+.calendari__dia--avui:not(.calendari__dia--triat) {
+  position: relative;
+  font-weight: 500;
+}
+
+.calendari__dia--avui:not(.calendari__dia--triat)::after {
+  content: '';
+  position: absolute;
+  bottom: 0.3rem;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--clay);
+}
+
+.calendari__dia--triat {
+  background: var(--clay);
+  color: #fff;
+}
+
+.calendari__dia--triat:hover:not(:disabled) {
+  background: var(--clay);
+}
+
+.calendari__esborra {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  color: rgb(43 38 34 / 55%);
+  font-size: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.calendari__esborra:hover {
+  color: var(--clay);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendari__dia,
+  .calendari__fletxa,
+  .calendari__esborra {
+    transition: none;
+  }
+}

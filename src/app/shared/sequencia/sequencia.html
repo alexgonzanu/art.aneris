@@ -1,0 +1,63 @@
+@let seccio = dades();
+
+<section
+  class="sequencia seccio"
+  [id]="seccio.id"
+  [class.sequencia--paper]="seccio.fons === 'paper'"
+  [class.sequencia--empremta]="seccio.motiu === 'empremta'"
+>
+  <div class="shell shell--estret">
+    <div class="sequencia__grid">
+      <div class="sequencia__intro" appReveal>
+        <p class="eyebrow eyebrow--sage">{{ seccio.eyebrow | translate }}</p>
+
+        <h2 class="titol">{{ seccio.titol | translate }}</h2>
+
+        <p class="sequencia__text">{{ seccio.text | translate }}</p>
+
+        <p class="sequencia__nota">{{ seccio.nota | translate }}</p>
+
+        <a class="cta sequencia__cta" href="#contacte" [appIntencio]="seccio.cta.intencio">
+          {{ seccio.cta.text | translate }}
+        </a>
+      </div>
+
+      <div class="sequencia__panell" appReveal>
+        <ol class="linia" appProgres>
+          @for (pas of seccio.passos; track pas.etiqueta; let i = $index) {
+            <li class="fita">
+              <div class="fita__marca">
+                <span class="fita__node">{{ '0' + (i + 1) }}</span>
+              </div>
+
+              <div class="fita__cos">
+                @if (pas.imatge; as imatge) {
+                  <figure class="fita__media">
+                    <img
+                      [ngSrc]="imatge"
+                      [alt]="pas.alt ? (pas.alt | translate) : ''"
+                      fill
+                      sizes="(min-width: 768px) 19vw, 100vw"
+                    />
+                  </figure>
+                } @else {
+                  <figure class="fita__media fita__media--espera">
+                    <span class="fita__espera">{{ 'sequencia.espera' | translate }}</span>
+                  </figure>
+                }
+
+                <h3 class="fita__etiqueta">{{ pas.etiqueta | translate }}</h3>
+                <p class="fita__peu">{{ pas.peu | translate }}</p>
+              </div>
+            </li>
+          }
+        </ol>
+
+        <div class="sequencia__tancament">
+          <p class="sequencia__resum">{{ seccio.resum | translate }}</p>
+          <p class="sequencia__segell">{{ seccio.segell | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,146 @@
+.preguntes {
+  background: var(--sand);
+}
+
+/* Una columna estreta —les max-w-4xl del disseny de referència— i centrada:
+ * és text per llegir, no una composició.
+ */
+.preguntes__intro,
+.preguntes__llista {
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.preguntes__intro {
+  text-align: center;
+}
+
+/* La llista
+ * ---------------------------------------------------------------------------
+ * Les preguntes s'encenen de dalt a baix amb la cascada compartida, com la
+ * resta de la pàgina.
+ */
+.preguntes__llista {
+  --arrencada: 0.02;
+  --pas: 0.12;
+  --velocitat: 3.6;
+
+  /* Només el marge de dalt: el `margin-inline: auto` que centra la columna el
+   * posa la regla de més amunt i un marge abreujat aquí el faria fora.
+   */
+  margin-top: 3rem;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.pregunta {
+  border-top: 1px solid var(--line);
+  opacity: var(--entrada);
+  transform: translateY(calc((1 - var(--entrada)) * 16px));
+}
+
+.pregunta__capcalera {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.pregunta__boto {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.pregunta__boto:hover {
+  color: var(--clay);
+}
+
+/* La creu del disseny de referència: un signe més que gira 45° i es converteix
+ * en una aspa quan la pregunta és oberta.
+ */
+.pregunta__creu {
+  flex: none;
+  color: rgb(43 38 34 / 45%);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    color 0.3s ease;
+}
+
+.pregunta--oberta .pregunta__creu {
+  color: var(--clay);
+  transform: rotate(45deg);
+}
+
+/* El plec
+ * ---------------------------------------------------------------------------
+ * La resposta no s'amaga amb display: none —que no es pot animar— sinó amb una
+ * fila de graella que va de 0fr a 1fr. Així el desplegat es mesura sol a partir
+ * del text que hi ha a dins, sense haver de calcular cap alçada des del JavaScript
+ * ni fixar-ne cap a mà.
+ *
+ * La visibilitat va al mateix paquet: en obrir salta a visible de seguida i en
+ * tancar espera que el plec s'hagi acabat de tancar. Mentre és oberta hi ha
+ * text de veritat i mentre és tancada no hi ha res, ni per al tabulador ni per
+ * a un lector de pantalla.
+ */
+.pregunta__plec {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    visibility 0.45s;
+}
+
+.pregunta--oberta .pregunta__plec {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.pregunta__cos {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* L'aire de sota la resposta va en padding i no en marge: dins d'una caixa que
+ * s'encongeix fins a zero, un marge se'n sortiria i deixaria un esglaó obert.
+ */
+.pregunta__resposta {
+  max-width: 42rem;
+  padding-bottom: 1.5rem;
+  color: rgb(43 38 34 / 60%);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+}
+
+@media (width >= 40rem) {
+  .pregunta__boto {
+    font-size: 1.05rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .preguntes__llista {
+    margin-top: 3.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pregunta__plec,
+  .pregunta__creu {
+    transition: none;
+  }
+}

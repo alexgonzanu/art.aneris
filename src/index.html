@@ -1,13 +1,52 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>ArtAneris</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <title>art.aneris — Art amb història</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F3EEE6" />
+    <meta
+      name="description"
+      content="art.aneris transforma records, llocs, rutes i moments vitals en obres d’art texturat úniques, fetes a mà i amb significat."
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Com es veu l'enllaç quan algú el comparteix. Els robots de WhatsApp,
+         Instagram o LinkedIn no executen JavaScript i no veuen res del que pinta
+         l'aplicació: això és tot el que en poden llegir.
+
+         Quan hi hagi domini, cal posar-hi l'adreça absoluta a og:url i a
+         og:image; algunes xarxes no resolen les relatives. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="art.aneris" />
+    <meta property="og:locale" content="ca_ES" />
+    <meta property="og:title" content="art.aneris — Art amb història" />
+    <meta
+      property="og:description"
+      content="art.aneris transforma records, llocs, rutes i moments vitals en obres d’art texturat úniques, fetes a mà i amb significat."
+    />
+    <meta property="og:image" content="/img/social.jpg" />
+    <meta property="og:image:alt" content="Obra texturada en tons granats d’art.aneris" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Les dues cares que es veuen abans de fer scroll: el títol del hero i el
+         seu text. La resta les demana el CSS quan toca. -->
+    <link
+      rel="preload"
+      href="/fonts/playfair-display-400-700-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/poppins-300-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

@@ -1,0 +1,193 @@
+.idea {
+  padding-block: 3.5rem;
+  background: var(--paper);
+  scroll-margin-top: 6rem;
+}
+
+.idea__grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.idea__eyebrow {
+  margin-bottom: 1.5rem;
+  color: var(--clay);
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.idea__title {
+  font-size: 3.6rem;
+  line-height: 0.98;
+  color: var(--ink);
+  /* Com al hero: el salt de línia ve dins del text traduït. */
+  white-space: pre-line;
+}
+
+.idea__text {
+  max-width: 31rem;
+  margin-top: 1.75rem;
+  color: rgb(43 38 34 / 70%);
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.idea__cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+  background: rgb(255 255 255 / 25%);
+  text-align: center;
+
+  /* L'opacitat la mou la directiva appReveal; la resta, el hover. */
+  transition:
+    opacity 0.7s ease,
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.45s ease,
+    background-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--clay);
+  background: rgb(255 255 255 / 55%);
+  box-shadow: var(--ombra-suau);
+}
+
+.card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--clay);
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.card__icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.card:hover .card__icon {
+  transform: translateY(-3px) scale(1.08);
+}
+
+.card__label {
+  color: var(--clay);
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.card__text {
+  margin-top: 1.25rem;
+  color: rgb(43 38 34 / 72%);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+@media (width >= 40rem) {
+  .idea__title {
+    font-size: 4.2rem;
+  }
+
+  .idea__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 48rem) {
+  .idea {
+    padding-block: 4rem;
+  }
+
+  .idea__title {
+    font-size: 4.6rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .idea {
+    padding-block: 5rem;
+  }
+
+  .idea__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 3rem;
+  }
+
+  .idea__intro {
+    grid-column: span 4;
+  }
+
+  .idea__cards {
+    grid-column: span 8;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Mateix criteri que al hero: dins d'una sola pantalla, el titular i l'aire
+ * vertical s'ajusten a l'alcada disponible.
+ */
+@media (height >= 860px) {
+  /* Ara qui s'endu el que sobra del bloc de portada es aquesta seccio, i el
+   * contingut es queda centrat dins del que li toqui.
+   */
+  .idea {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(1.75rem, 3.5vh, 5rem);
+  }
+
+  .idea__title {
+    font-size: clamp(1.9rem, 5vh, 4.6rem);
+  }
+
+  .idea__eyebrow {
+    margin-bottom: clamp(0.5rem, 1.4vh, 1.5rem);
+  }
+
+  .idea__text {
+    margin-top: clamp(0.75rem, 2vh, 1.75rem);
+  }
+
+  /* Les targetes son el que marca l'alcada de la seccio: el seu text cau en
+   * moltes linies quan les columnes son estretes. Els termes en vh estan
+   * calibrats perque a partir de ~1300px d'alcada tornin al valor del disseny.
+   */
+  .card {
+    padding-block: clamp(1rem, 2.5vh, 2rem);
+  }
+
+  .card__icon {
+    margin-bottom: clamp(0.5rem, 1.85vh, 1.5rem);
+  }
+
+  .card__text {
+    margin-top: clamp(0.5rem, 1.55vh, 1.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover,
+  .card:hover .card__icon {
+    transform: none;
+  }
+}

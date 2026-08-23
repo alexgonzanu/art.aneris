@@ -1,0 +1,50 @@
+<section class="galeria" id="obres">
+  <div class="shell shell--estret">
+    <header class="galeria__intro" appReveal>
+      <div>
+        <p class="eyebrow">{{ 'galeria.eyebrow' | translate }}</p>
+        <h2 class="titol">{{ 'galeria.titol' | translate }}</h2>
+      </div>
+    </header>
+
+    <div class="galeria__grid">
+      <figure class="peca peca--gran" appReveal>
+        <img
+          ngSrc="obra-mar-interior"
+          fill
+          sizes="(min-width: 768px) 42vw, 100vw"
+          [alt]="'galeria.altMarInterior' | translate"
+        />
+      </figure>
+
+      <div class="galeria__columna">
+        <figure class="peca" [appReveal]="120">
+          <img
+            ngSrc="obra-bosc"
+            fill
+            sizes="(min-width: 768px) 29vw, 100vw"
+            [alt]="'galeria.altBosc' | translate"
+          />
+        </figure>
+
+        <figure class="peca" [appReveal]="240">
+          <img
+            ngSrc="obra-abstracta-terracota"
+            fill
+            sizes="(min-width: 768px) 29vw, 100vw"
+            [alt]="'galeria.altAbstractaTerracota' | translate"
+          />
+        </figure>
+
+        <figure class="peca peca--ampla" [appReveal]="360">
+          <img
+            ngSrc="obra-muntanya-relleu"
+            fill
+            sizes="(min-width: 768px) 58vw, 100vw"
+            [alt]="'galeria.altMuntanyaRelleu' | translate"
+          />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>

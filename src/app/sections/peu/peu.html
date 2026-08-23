@@ -1,0 +1,25 @@
+<footer class="peu">
+  <div class="shell shell--estret peu__shell">
+    <div class="peu__marca" appReveal>
+      <p class="peu__logotip">art.aneris</p>
+
+      <p class="peu__lema">{{ 'peu.lema' | translate }}</p>
+    </div>
+
+    <div class="peu__cantonada" [appReveal]="140">
+      <a
+        class="peu__instagram"
+        href="https://www.instagram.com/art.aneris/"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="'peu.instagramAria' | translate"
+      >
+        <app-icona-instagram />
+
+        art.aneris
+      </a>
+
+      <span class="peu__copyright">© {{ any }} art.aneris</span>
+    </div>
+  </div>
+</footer>

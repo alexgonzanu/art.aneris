@@ -1,0 +1,91 @@
+.peu {
+  padding-block: 2.5rem;
+  background: var(--ink);
+  color: #fff;
+}
+
+.peu__shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* L'entrada
+ * ---------------------------------------------------------------------------
+ * Aquí no fem servir appProgres com a la resta de la pàgina, i és a posta: el
+ * peu és l'últim bloc i mai no acaba de travessar la pantalla, de manera que un
+ * progrés mesurat sobre el recorregut es quedaria a mig camí per sempre. Amb
+ * appReveal n'hi ha prou —entra a la vista un sol cop— i les dues meitats es
+ * desfasen 140 ms perquè no apareguin de cop.
+ *
+ * El logotip hi afegeix el seu propi gest: la lletra s'obre fins a l'espaiat
+ * definitiu mentre el bloc puja, com si el nom acabés de posar-se a lloc.
+ */
+.peu__logotip {
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  transition: letter-spacing 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.peu__marca.reveal--visible .peu__logotip {
+  letter-spacing: 0.16em;
+}
+
+.peu__lema {
+  max-width: 28rem;
+  margin-top: 0.5rem;
+  color: rgb(255 255 255 / 45%);
+  font-size: 0.96rem;
+  line-height: 1.5rem;
+}
+
+.peu__cantonada {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: rgb(255 255 255 / 55%);
+  font-size: 0.875rem;
+}
+
+.peu__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.peu__instagram:hover {
+  color: #fff;
+}
+
+.peu__instagram app-icona-instagram {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+@media (width >= 48rem) {
+  .peu {
+    padding-block: 3rem;
+  }
+
+  .peu__shell {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  /* A l'escriptori la columna de la dreta s'alinea amb la vora, com al disseny
+   * de referència.
+   */
+  .peu__cantonada {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peu__logotip {
+    letter-spacing: 0.16em;
+    transition: none;
+  }
+}

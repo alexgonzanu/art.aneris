@@ -1,0 +1,82 @@
+<header class="header">
+  <div class="header__bar shell">
+    <a class="header__logo" href="#inici">art.aneris</a>
+
+    <nav class="header__nav" [attr.aria-label]="'capcalera.navegacio' | translate">
+      @for (link of links; track link.href) {
+        <a class="header__link" [href]="link.href">{{ link.label | translate }}</a>
+      }
+      <a class="header__cta" href="#contacte">{{ 'capcalera.contacte' | translate }}</a>
+
+      <!-- El codi de l'idioma es queda sense traduir a posta: qui busca l'anglès
+           busca «en», passi el que passi a la resta de la pàgina. -->
+      <div class="idiomes" role="group" [attr.aria-label]="'capcalera.idioma' | translate">
+        @for (idioma of disponibles; track idioma) {
+          <button
+            class="idiomes__opcio"
+            type="button"
+            [class.idiomes__opcio--actiu]="idioma === idiomaActual()"
+            [attr.aria-pressed]="idioma === idiomaActual()"
+            (click)="canviaIdioma(idioma)"
+          >
+            {{ idioma }}
+          </button>
+        }
+      </div>
+    </nav>
+
+    <button
+      type="button"
+      class="header__toggle"
+      [attr.aria-label]="(menuOpen() ? 'capcalera.tancarMenu' : 'capcalera.obrirMenu') | translate"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobileMenu"
+      (click)="toggleMenu()"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </div>
+
+  @if (menuOpen()) {
+    <div class="header__mobile" id="mobileMenu">
+      @for (link of links; track link.href) {
+        <a class="header__mobile-link" [href]="link.href" (click)="closeMenu()">{{
+          link.label | translate
+        }}</a>
+      }
+      <a
+        class="header__mobile-link header__mobile-link--cta"
+        href="#contacte"
+        (click)="closeMenu()"
+      >
+        {{ 'capcalera.contacte' | translate }}
+      </a>
+
+      <div
+        class="idiomes idiomes--mobil"
+        role="group"
+        [attr.aria-label]="'capcalera.idioma' | translate"
+      >
+        @for (idioma of disponibles; track idioma) {
+          <button
+            class="idiomes__opcio"
+            type="button"
+            [class.idiomes__opcio--actiu]="idioma === idiomaActual()"
+            [attr.aria-pressed]="idioma === idiomaActual()"
+            (click)="canviaIdioma(idioma)"
+          >
+            {{ idioma }}
+          </button>
+        }
+      </div>
+    </div>
+  }
+</header>

@@ -1,0 +1,40 @@
+<section class="preguntes seccio" id="preguntes">
+  <div class="shell shell--estret">
+    <header class="preguntes__intro" appReveal>
+      <p class="eyebrow eyebrow--sage">{{ 'preguntes.eyebrow' | translate }}</p>
+
+      <h2 class="titol">{{ 'preguntes.titol' | translate }}</h2>
+    </header>
+
+    <ul class="preguntes__llista cascada" appProgres>
+      @for (pregunta of preguntes; track pregunta.id; let i = $index) {
+        <li class="pregunta" [class.pregunta--oberta]="esOberta(i)">
+          <h3 class="pregunta__capcalera">
+            <button
+              class="pregunta__boto"
+              type="button"
+              [id]="'pregunta-' + i"
+              [attr.aria-expanded]="esOberta(i)"
+              [attr.aria-controls]="'resposta-' + i"
+              (click)="commuta(i)"
+            >
+              <span class="pregunta__questio">{{ pregunta.questio | translate }}</span>
+              <span class="pregunta__creu" aria-hidden="true">+</span>
+            </button>
+          </h3>
+
+          <div
+            class="pregunta__plec"
+            role="region"
+            [id]="'resposta-' + i"
+            [attr.aria-labelledby]="'pregunta-' + i"
+          >
+            <div class="pregunta__cos">
+              <p class="pregunta__resposta">{{ pregunta.resposta | translate }}</p>
+            </div>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

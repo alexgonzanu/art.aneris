@@ -1,0 +1,65 @@
+<section class="tallers seccio" id="tallers">
+  <div class="shell shell--estret">
+    <div class="tallers__grid">
+      <div class="tallers__intro" appReveal>
+        <p class="eyebrow">{{ 'tallers.eyebrow' | translate }}</p>
+
+        <h2 class="titol">{{ 'tallers.titol' | translate }}</h2>
+
+        <p class="tallers__text">{{ 'tallers.text' | translate }}</p>
+
+        <p class="tallers__nota">{{ 'tallers.nota' | translate }}</p>
+
+        <a class="cta cta--contorn tallers__cta" href="#contacte" appIntencio="taller">
+          {{ 'tallers.cta' | translate }}
+        </a>
+      </div>
+
+      <div class="tallers__mosaic cascada" appProgres>
+        <figure class="tessella">
+          <div class="tessella__marc">
+            <img
+              ngSrc="taller-materials-eines"
+              fill
+              sizes="(min-width: 768px) 24vw, 50vw"
+              [alt]="'tallers.altMaterials' | translate"
+            />
+          </div>
+        </figure>
+
+        <figure class="tessella">
+          <div class="tessella__marc">
+            <img
+              ngSrc="taller-peca-proces"
+              fill
+              sizes="(min-width: 768px) 24vw, 50vw"
+              [alt]="'tallers.altPecaProces' | translate"
+            />
+          </div>
+        </figure>
+
+        <figure class="tessella">
+          <div class="tessella__marc">
+            <img
+              ngSrc="taller-detall-textura"
+              fill
+              sizes="(min-width: 768px) 24vw, 50vw"
+              [alt]="'tallers.altDetallTextura' | translate"
+            />
+          </div>
+        </figure>
+
+        <figure class="tessella">
+          <div class="tessella__marc">
+            <img
+              ngSrc="taller-proces-creatiu"
+              fill
+              sizes="(min-width: 768px) 24vw, 50vw"
+              [alt]="'tallers.altProcesCreatiu' | translate"
+            />
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>

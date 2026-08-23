@@ -1,0 +1,94 @@
+<button
+  class="calendari__camp camp__control"
+  type="button"
+  [id]="identificador()"
+  [disabled]="deshabilitat()"
+  [class.calendari__camp--buit]="!valor()"
+  [attr.aria-expanded]="obert()"
+  [attr.aria-describedby]="descripcio() ?? null"
+  aria-haspopup="dialog"
+  (click)="commuta()"
+>
+  <span>{{ etiqueta() || ('calendari.marcador' | translate) }}</span>
+
+  <svg
+    class="calendari__icona"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    aria-hidden="true"
+  >
+    <rect x="3.5" y="5" width="17" height="15.5" rx="3" />
+    <path stroke-linecap="round" d="M8 3.5v3M16 3.5v3M3.5 10h17" />
+  </svg>
+</button>
+
+@if (obert()) {
+  <div class="calendari__panell" role="dialog" [attr.aria-label]="'calendari.dialeg' | translate">
+    <div class="calendari__capcalera">
+      <button
+        class="calendari__fletxa"
+        type="button"
+        [attr.aria-label]="'calendari.mesAnterior' | translate"
+        (click)="mouMes(-1)"
+      >
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <!-- El mes s'anuncia en canviar: qui no el veu ha de saber on ha anat a
+           parar el focus. -->
+      <p class="calendari__mes" aria-live="polite">{{ titolMes() }}</p>
+
+      <button
+        class="calendari__fletxa"
+        type="button"
+        [attr.aria-label]="'calendari.mesSeguent' | translate"
+        (click)="mouMes(1)"
+      >
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <table class="calendari__graella" role="grid" [attr.aria-label]="titolMes()">
+      <thead>
+        <tr>
+          @for (capcalera of capcaleres(); track capcalera.nom) {
+            <th scope="col" [attr.abbr]="capcalera.nom">
+              <span aria-hidden="true">{{ capcalera.inicial }}</span>
+              <span class="calendari__nom-dia">{{ capcalera.nom }}</span>
+            </th>
+          }
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (setmana of setmanes(); track setmana[0].iso) {
+          <tr>
+            @for (dia of setmana; track dia.iso) {
+              <td role="gridcell" [attr.aria-selected]="dia.iso === valor()">
+                <button
+                  class="calendari__dia"
+                  type="button"
+                  [attr.data-dia]="dia.iso"
+                  [class.calendari__dia--fora]="!dia.delMes"
+                  [class.calendari__dia--avui]="dia.avui"
+                  [class.calendari__dia--triat]="dia.iso === valor()"
+                  [disabled]="dia.passat"
+                  [tabindex]="dia.iso === focus() ? 0 : -1"
+                  (click)="tria(dia)"
+                >
+                  {{ dia.numero }}
+                </button>
+              </td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    <button class="calendari__esborra" type="button" (click)="esborra()">
+      {{ 'calendari.esborra' | translate }}
+    </button>
+  </div>
+}

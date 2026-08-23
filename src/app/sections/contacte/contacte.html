@@ -1,0 +1,174 @@
+<section class="contacte seccio" id="contacte">
+  <div class="shell shell--estret">
+    <div class="contacte__grid">
+      <div class="contacte__intro" appReveal>
+        <p class="eyebrow">{{ 'contacte.eyebrow' | translate }}</p>
+
+        <h2 class="titol">{{ 'contacte.titol' | translate }}</h2>
+
+        <p class="contacte__text">
+          <strong>{{ 'contacte.textFort' | translate }}</strong>
+          {{ 'contacte.text' | translate }}
+        </p>
+
+        <div class="contacte__xarxes">
+          <p class="contacte__etiqueta">{{ 'contacte.tambeEm' | translate }}</p>
+
+          <a
+            class="contacte__instagram"
+            href="https://www.instagram.com/art.aneris/"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'contacte.instagramAria' | translate"
+          >
+            <app-icona-instagram />
+
+            art.aneris <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <form
+        class="contacte__form cascada"
+        [formGroup]="form"
+        (ngSubmit)="envia()"
+        appProgres
+        novalidate
+      >
+        <div class="contacte__parella">
+          <div class="camp">
+            <label class="camp__etiqueta" for="nom">{{
+              'contacte.nom.etiqueta' | translate
+            }}</label>
+            <input
+              class="camp__control"
+              id="nom"
+              type="text"
+              formControlName="nom"
+              [placeholder]="'contacte.nom.marcador' | translate"
+              autocomplete="name"
+              [attr.aria-invalid]="malament('nom')"
+              [attr.aria-describedby]="malament('nom') ? 'avis-nom' : null"
+            />
+            @if (malament('nom')) {
+              <p class="camp__avis" id="avis-nom">{{ 'contacte.nom.avis' | translate }}</p>
+            }
+          </div>
+
+          <div class="camp">
+            <label class="camp__etiqueta" for="contacte-directe">
+              {{ 'contacte.directe.etiqueta' | translate }}
+            </label>
+            <input
+              class="camp__control"
+              id="contacte-directe"
+              type="text"
+              formControlName="contacte"
+              [placeholder]="'contacte.directe.marcador' | translate"
+              [attr.aria-invalid]="malament('contacte')"
+              [attr.aria-describedby]="malament('contacte') ? 'avis-contacte' : null"
+            />
+            @if (malament('contacte')) {
+              <p class="camp__avis" id="avis-contacte">
+                {{ 'contacte.directe.avis' | translate }}
+              </p>
+            }
+          </div>
+        </div>
+
+        <div class="camp camp--tipus">
+          <label class="camp__etiqueta" id="etiqueta-tipus" for="tipus">
+            {{ 'contacte.tipus.etiqueta' | translate }}
+          </label>
+          <app-triador
+            formControlName="tipus"
+            identificador="tipus"
+            etiquetadaPer="etiqueta-tipus"
+            [opcions]="opcions"
+            [incorrecte]="malament('tipus')"
+            [descripcio]="malament('tipus') ? 'avis-tipus' : undefined"
+          />
+          @if (malament('tipus')) {
+            <p class="camp__avis" id="avis-tipus">{{ 'contacte.tipus.avis' | translate }}</p>
+          }
+        </div>
+
+        <div class="camp">
+          <label class="camp__etiqueta" for="detalls">
+            {{ 'contacte.detalls.etiqueta' | translate }}
+          </label>
+          <textarea
+            class="camp__control camp__control--llarg"
+            id="detalls"
+            rows="6"
+            formControlName="detalls"
+            [placeholder]="'contacte.detalls.marcador' | translate"
+            [attr.aria-invalid]="malament('detalls')"
+            [attr.aria-describedby]="malament('detalls') ? 'avis-detalls' : null"
+          ></textarea>
+          @if (malament('detalls')) {
+            <p class="camp__avis" id="avis-detalls">{{ 'contacte.detalls.avis' | translate }}</p>
+          }
+        </div>
+
+        <div class="camp camp--data">
+          <label class="camp__etiqueta" for="data">
+            {{ 'contacte.data.etiqueta' | translate }}
+            <span class="camp__opcional">{{ 'contacte.data.opcional' | translate }}</span>
+          </label>
+          <app-calendari
+            formControlName="data"
+            identificador="data"
+            descripcio="pista-data"
+            [minim]="avui"
+          />
+          <p class="camp__pista" id="pista-data">{{ 'contacte.data.pista' | translate }}</p>
+        </div>
+
+        <div class="camp camp--consentiment">
+          <label class="consentiment">
+            <input
+              class="consentiment__marca"
+              id="privacitat"
+              type="checkbox"
+              formControlName="privacitat"
+              [attr.aria-invalid]="malament('privacitat')"
+              [attr.aria-describedby]="malament('privacitat') ? 'avis-privacitat' : null"
+            />
+            <span>{{ 'contacte.privacitat.text' | translate }}</span>
+          </label>
+          @if (malament('privacitat')) {
+            <p class="camp__avis" id="avis-privacitat">
+              {{ 'contacte.privacitat.avis' | translate }}
+            </p>
+          }
+        </div>
+
+        <div class="camp camp--final">
+          <!-- El camp esquer: invisible, fora del tabulador i amagat als lectors
+               de pantalla. Una persona no l'omple mai; un robot que llegeix el
+               formulari, sí. -->
+          <div class="esquer" aria-hidden="true">
+            <label for="web">{{ 'contacte.esquer' | translate }}</label>
+            <input id="web" type="text" formControlName="web" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button class="cta contacte__enviar" type="submit" [disabled]="enviant()">
+            {{ (enviant() ? 'contacte.enviant' : 'contacte.enviar') | translate }}
+          </button>
+
+          <!-- La regió viva ha d'existir des del primer moment: un role="status" que
+               apareix amb el text ja a dins no s'anuncia de manera fiable, perquè el
+               lector de pantalla no tenia res a vigilar mentre no hi era. -->
+          <div role="status">
+            @if (estat(); as avis) {
+              <p class="contacte__estat" [attr.data-to]="avis.to">{{ avis.clau | translate }}</p>
+            }
+          </div>
+
+          <p class="contacte__lletra-petita">{{ 'contacte.lletraPetita' | translate }}</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

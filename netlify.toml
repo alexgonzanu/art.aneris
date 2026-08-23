@@ -1,0 +1,23 @@
+# Com es construeix i com se serveix la landing.
+#
+# Les credencials del correu no viuen aquí: van a les variables d'entorn del
+# panell de Netlify. Mira l'apartat «Formulari de contacte» del README.
+
+[build]
+  command = "npm run build"
+  publish = "dist/art.aneris/browser"
+
+# El formulari crida /api/contacte, que és una adreça neta i del mateix domini:
+# així no hi ha CORS pel mig. Ha d'anar abans del comodí de sota, que si no se
+# l'empassa ell.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# La landing és una sola pàgina: qualsevol adreça que no existeixi torna
+# l'index amb un 200 i no un 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

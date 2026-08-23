@@ -1,0 +1,184 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--night);
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Vels del disseny de referència.
+ *
+ * Al fitxer original aquestes tres capes no arriben a pintar-se mai: el CDN de
+ * Tailwind no resol bg-[#17130f]/24 ni els degradats amb color arbitrari i
+ * opacitat, així que la referència es veu amb la fotografia neta. Sense cap vel,
+ * però, el text blanc es queda entre 2:1 i 2.9:1 de contrast, molt per sota del
+ * 4.5:1 que demana la WCAG AA.
+ *
+ * Per això apliquem la intenció de l'autor només on cal: el degradat lateral,
+ * que enfosqueix la columna del text i deixa la fotografia intacta a la dreta.
+ * La capa plana queda apagada perquè era la que apagava tota la imatge; per
+ * recuperar-les n'hi ha prou amb pujar --hero-wash-flat o --hero-wash-vertical.
+ */
+.hero__wash {
+  position: absolute;
+  inset: 0;
+  background: rgb(23 19 15 / 24%);
+  opacity: var(--hero-wash-flat, 0);
+}
+
+.hero__wash--left {
+  background: linear-gradient(
+    to right,
+    rgb(23 19 15 / 72%) 0%,
+    rgb(23 19 15 / 32%) 50%,
+    rgb(23 19 15 / 0%) 100%
+  );
+  opacity: 1;
+}
+
+.hero__wash--vertical {
+  background: linear-gradient(
+    to top,
+    rgb(23 19 15 / 34%) 0%,
+    rgb(23 19 15 / 0%) 50%,
+    rgb(23 19 15 / 10%) 100%
+  );
+  opacity: var(--hero-wash-vertical, 0);
+}
+
+.hero__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 650px;
+  padding-block: 7rem 4rem;
+}
+
+.hero__content {
+  max-width: 29rem;
+  color: #fff;
+}
+
+.hero__title {
+  font-size: 3.85rem;
+  line-height: 0.93;
+  /* Els salts de línia venen dins del text traduït; això els fa valer. */
+  white-space: pre-line;
+}
+
+.hero__lead {
+  max-width: 26rem;
+  margin-top: 1.5rem;
+  color: rgb(255 255 255 / 88%);
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.hero__actions {
+  margin-top: 2.5rem;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.5rem;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 5%);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.hero__cta:hover {
+  background: rgb(255 255 255 / 12%);
+}
+
+@media (width >= 40rem) {
+  .hero__title {
+    font-size: 4.45rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .hero__inner {
+    min-height: 720px;
+    padding-block: 8rem 5rem;
+  }
+
+  .hero__content {
+    max-width: 31rem;
+  }
+
+  .hero__title {
+    font-size: 5.05rem;
+  }
+
+  .hero__lead {
+    font-size: 1.08rem;
+  }
+
+  .hero__cta {
+    padding: 1rem 1.75rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .hero__inner {
+    min-height: 760px;
+    padding-top: 9rem;
+  }
+
+  .hero__content {
+    max-width: 33rem;
+  }
+
+  .hero__title {
+    font-size: 5.35rem;
+  }
+}
+
+/* Dins del bloc .fold el hero s'estira o s'encongeix per deixar lloc a la
+ * seccio de sota. Les mides verticals es lliguen a l'alcada de la finestra:
+ * en pantalles altes es queden al valor del disseny de referencia i en
+ * pantalles baixes cedeixen el que cal perque "La idea" hi capiga sencera.
+ */
+@media (height >= 860px) {
+  .hero {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+
+  .hero__inner {
+    flex: 1 1 auto;
+    min-height: auto;
+    padding-block: clamp(5rem, 9vh, 9rem) clamp(1.75rem, 3vh, 4rem);
+  }
+
+  .hero__title {
+    font-size: clamp(2.6rem, 5.8vh, 5.35rem);
+  }
+
+  .hero__lead {
+    margin-top: clamp(0.75rem, 2vh, 1.5rem);
+  }
+
+  .hero__actions {
+    margin-top: clamp(1.25rem, 3vh, 2.5rem);
+  }
+}

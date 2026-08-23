@@ -1,0 +1,133 @@
+@use '../../shared/linia' as *;
+
+.proces {
+  background: var(--paper);
+}
+
+.proces__intro {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.proces__text {
+  max-width: 42rem;
+  margin-top: 1.25rem;
+  margin-inline: auto;
+  color: rgb(43 38 34 / 60%);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+}
+
+/* Els tres passos comparteixen la línia del temps amb la secció de rutes; aquí
+ * la tenim prou ampla com per posar-la horitzontal a partir de 64rem.
+ */
+@include linia(64rem);
+
+.fita__titol {
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.fita__detall {
+  margin-top: 0.4rem;
+  color: rgb(43 38 34 / 45%);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fita__cos {
+  margin-top: 1.25rem;
+  padding: 0.75rem 0.75rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1.75rem;
+  background: var(--sand);
+}
+
+.fita__cos--fosc {
+  border-color: transparent;
+  background: var(--ink);
+}
+
+/* El primer pas no porta foto sinó la veu del client. Es queda a l'alçada de
+ * les imatges dels altres dos perquè les tres columnes acabin igualades.
+ */
+.fita__cita {
+  display: flex;
+  align-items: center;
+  min-height: 13rem;
+  padding: 0.5rem;
+}
+
+/* La bombolla ha de quedar un to per sota de la targeta que la conté: --line
+ * és el to que ja fa aquest paper a la resta de la pàgina.
+ */
+.bombolla {
+  padding: 1.15rem 1.25rem;
+  border-radius: 1.35rem;
+  border-bottom-left-radius: 0.5rem;
+  background: var(--line);
+}
+
+.bombolla__text {
+  color: rgb(43 38 34 / 72%);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+}
+
+.bombolla__hora {
+  display: block;
+  margin-top: 0.4rem;
+  color: rgb(43 38 34 / 35%);
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+.fita__media {
+  position: relative;
+  height: 13rem;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 1.25rem;
+}
+
+/* Mateixa sensació de càmera que a la galeria, però lligada a l'scroll: el
+ * zoom es va tancant amb l'entrada de la targeta.
+ */
+.fita__media img {
+  object-fit: cover;
+  transform: scale(calc(1 + (1 - var(--entrada)) * 0.09));
+}
+
+.fita__peu {
+  margin-top: 1.25rem;
+  padding-inline: 0.5rem;
+  color: rgb(43 38 34 / 60%);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+}
+
+.fita__cos--fosc .fita__peu {
+  color: rgb(255 255 255 / 62%);
+}
+
+@media (width >= 40rem) {
+}
+
+@media (width >= 48rem) {
+}
+
+@media (width >= 64rem) {
+  /* Els tres peus reserven les mateixes tres línies. Sense això, el peu més
+   * llarg estira les tres columnes i als altres dos els queda un buit entre la
+   * foto i el text, que a la targeta fosca es veu el doble.
+   */
+  .fita__peu {
+    min-height: calc(1.75rem * 3);
+  }
+}

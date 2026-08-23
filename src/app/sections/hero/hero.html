@@ -1,0 +1,30 @@
+<section class="hero" id="inici">
+  <div class="hero__media">
+    <img
+      class="hero__image"
+      ngSrc="hero-obra-granats"
+      [alt]="'hero.alt' | translate"
+      fill
+      priority
+      sizes="100vw"
+    />
+    <div class="hero__wash" aria-hidden="true"></div>
+    <div class="hero__wash hero__wash--left" aria-hidden="true"></div>
+    <div class="hero__wash hero__wash--vertical" aria-hidden="true"></div>
+  </div>
+
+  <div class="hero__inner shell">
+    <div class="hero__content">
+      <!-- El títol porta els salts de línia a dins del text mateix: on cau cada
+           línia és part del disseny i canvia amb l'idioma. Els dibuixa el CSS amb
+           white-space: pre-line, i no cap etiqueta dins de la traducció. -->
+      <h1 class="hero__title">{{ 'hero.titol' | translate }}</h1>
+
+      <p class="hero__lead">{{ 'hero.lead' | translate }}</p>
+
+      <div class="hero__actions">
+        <a class="hero__cta" href="#com-funciona">{{ 'hero.cta' | translate }}</a>
+      </div>
+    </div>
+  </div>
+</section>

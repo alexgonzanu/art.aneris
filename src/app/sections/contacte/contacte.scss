@@ -1,0 +1,263 @@
+.contacte {
+  background: var(--paper);
+}
+
+.contacte__grid {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.contacte__text {
+  max-width: 28rem;
+  margin-top: 1.5rem;
+  color: rgb(43 38 34 / 60%);
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+}
+
+.contacte__text strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.contacte__xarxes {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.contacte__etiqueta {
+  color: rgb(43 38 34 / 40%);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.contacte__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contacte__instagram:hover {
+  color: var(--clay);
+}
+
+.contacte__instagram app-icona-instagram {
+  color: var(--clay);
+}
+
+/* El formulari
+ * ---------------------------------------------------------------------------
+ * No apareix de cop: els blocs s'encenen de dalt a baix amb la cascada
+ * compartida, com si el full s'anés escrivint a mesura que baixes.
+ *
+ * Els números van prou de pressa perquè cada bloc acabi d'entrar abans
+ * d'arribar a la part visible de la pantalla: un camp de formulari no pot estar
+ * a mig aparèixer quan ja el pots tocar. Amb moviment reduït —on la directiva
+ * escriu 1 directament— es veu sencer des del primer moment.
+ */
+.contacte__form {
+  --arrencada: 0.02;
+  --pas: 0.08;
+  --velocitat: 4;
+
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+  background: var(--sand);
+}
+
+.contacte__form > * {
+  opacity: var(--entrada);
+  transform: translateY(calc((1 - var(--entrada)) * 18px));
+}
+
+.contacte__parella {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* La separació entre blocs la posa el formulari i no els camps: dins de la
+ * parella —nom i contacte— les dues meitats han d'arrencar exactament a la
+ * mateixa alçada, i qualsevol marge entre germans hi obriria un esglaó.
+ */
+.contacte__form > * + * {
+  margin-top: 1.25rem;
+}
+
+.camp__etiqueta {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.camp__opcional {
+  color: rgb(43 38 34 / 40%);
+  font-weight: 400;
+}
+
+.camp__pista {
+  margin-top: 0.4rem;
+  color: rgb(43 38 34 / 45%);
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+}
+
+.camp__avis {
+  margin-top: 0.4rem;
+  color: #a4503f;
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+}
+
+.consentiment {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgb(43 38 34 / 55%);
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+.consentiment__marca {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  margin: 0.2rem 0 0;
+  accent-color: var(--ink);
+}
+
+/* Els dos blocs que obren un panell —el desplegable i el calendari— es pinten
+ * per damunt dels que vénen després.
+ *
+ * No n'hi hauria prou amb el z-index de dins del panell: cada bloc del
+ * formulari porta transform per entrar en cascada i això li fa un context
+ * d'apilament propi, de manera que els blocs es pinten sencers i en ordre de
+ * document. Per sortir per sobre del botó d'enviar, qui ha de pujar és el bloc.
+ *
+ * El desplegable puja més que el calendari perquè el seu panell s'obre cap
+ * avall i el bloc de la data li queda a sota; a l'inrevés no cal, que el
+ * calendari també s'obre cap avall i allà ja no hi ha cap camp.
+ */
+.camp--tipus {
+  position: relative;
+  z-index: 6;
+}
+
+.camp--data {
+  position: relative;
+  z-index: 5;
+}
+
+.camp--consentiment {
+  margin-top: 1.5rem;
+}
+
+/* El camp esquer de l'antispam. Es queda al document —un robot l'ha de poder
+ * trobar— però fora de la vista, sense ocupar lloc i sense sortir per cap
+ * costat que pugui obrir una barra de desplaçament.
+ */
+.esquer {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.camp--final {
+  margin-top: 1.75rem;
+}
+
+.contacte__enviar {
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+
+/* Els tres avisos possibles: falta connectar l'endpoint, s'ha enviat i ha
+ * fallat. Els colors són versions apagades dels de sempre perquè no trenquin
+ * la paleta de terra de la pàgina.
+ */
+.contacte__estat {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.contacte__estat[data-to='avis'] {
+  border-color: #ecd9b0;
+  background: #fbf3e2;
+  color: #7c5b21;
+}
+
+.contacte__estat[data-to='fet'] {
+  border-color: #cbdec8;
+  background: #eaf2e9;
+  color: #40603f;
+}
+
+.contacte__estat[data-to='error'] {
+  border-color: #e6cdc6;
+  background: #f8ece9;
+  color: #8f4436;
+}
+
+.contacte__lletra-petita {
+  margin-top: 1.25rem;
+  color: rgb(43 38 34 / 35%);
+  font-size: 0.6875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+@media (width >= 40rem) {
+  .contacte__form {
+    padding: 2rem;
+  }
+
+  /* Les dues meitats comparteixen les tres files del bloc —etiqueta, camp i
+   * avís— en comptes de repartir-se-les cadascuna pel seu compte. Així els
+   * dos camps queden arrenglerats encara que una etiqueta ocupi dues línies
+   * i l'altra només una, que és el que passa en pantalles estretes.
+   */
+  .contacte__parella {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    row-gap: 0;
+  }
+
+  .contacte__parella .camp {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+  }
+}
+
+@media (width >= 48rem) {
+  /* Text a l'esquerra i formulari a la dreta, com les 5 + 6 columnes del
+   * disseny de referència.
+   */
+  .contacte__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .contacte__intro {
+    grid-column: span 5;
+  }
+
+  .contacte__form {
+    padding: 2.5rem;
+    grid-column: 7 / span 6;
+  }
+}

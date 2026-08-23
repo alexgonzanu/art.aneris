@@ -1,0 +1,199 @@
+/* La línia del temps
+ * ===========================================================================
+ * La geometria compartida de les seqüències numerades: els nodes, el carril
+ * que els uneix i el tram que es va omplint amb l'scroll. Aquí només hi ha
+ * l'esquelet i el moviment; l'aspecte del contingut de cada fita el posa la
+ * secció que la fa servir.
+ *
+ * De base la línia és vertical —el node al marge esquerre i el tram baixant cap
+ * al següent— i a partir de `$gir` es posa horitzontal i es llegeix d'esquerra
+ * a dreta. Cada secció tria el seu punt de gir, perquè no totes disposen de la
+ * mateixa amplada.
+ *
+ * Cada tram el dibuixa la fita que el precedeix i no un pseudoelement de tot el
+ * conjunt: així arrenca i acaba exactament a la vora de cada node, hi hagi el
+ * buit que hi hagi entre columnes.
+ *
+ * Cal envoltar-la amb la directiva appProgres, que és qui escriu `--progres`.
+ */
+@mixin linia($gir: 64rem, $fites: 3, $arrencada: 0.04, $pas: 0.38) {
+  .linia {
+    --linia-buit: 3rem;
+    --node-mida: 2.6rem;
+
+    display: grid;
+    gap: var(--linia-buit);
+    margin: 3.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fita {
+    --node: 0;
+    --entrada: 0;
+    --tram: 0;
+
+    position: relative;
+    min-height: var(--node-mida);
+    padding-left: calc(var(--node-mida) + 1rem);
+  }
+
+  /* Coreografia
+   * -------------------------------------------------------------------------
+   * Tot surt del mateix número: `--progres`, que la directiva va actualitzant
+   * mentre fas scroll. Cada fita en deriva tres valors de 0 a 1 —el node que
+   * s'encén, el tram que es dibuixa i el cos que entra— desplaçats en el temps
+   * per `$pas` perquè es llegeixin 01 → 02 → 03.
+   *
+   * El multiplicador és la inversa de la durada: * 10 vol dir que aquell tros
+   * passa de 0 a 1 en una desena part del recorregut.
+   */
+  @for $i from 1 through $fites {
+    $desfasament: $arrencada + ($i - 1) * $pas;
+
+    .fita:nth-child(#{$i}) {
+      --node: clamp(0, (var(--progres) - #{$desfasament}) * 10, 1);
+      --entrada: clamp(0, (var(--progres) - #{$desfasament + 0.02}) * 5, 1);
+      --tram: clamp(0, (var(--progres) - #{$desfasament + 0.08}) * 3.4, 1);
+    }
+  }
+
+  /* L'últim tram és la cua que es fon: com que no ha d'arribar enlloc, es
+   * dibuixa més de pressa i no deixa la secció esperant-lo.
+   */
+  .fita:last-child {
+    --tram: clamp(0, (var(--progres) - #{$arrencada + ($fites - 1) * $pas + 0.08}) * 8.5, 1);
+  }
+
+  /* El node
+   * -------------------------------------------------------------------------
+   * Porta el número a dins, que és el que el converteix en una fita i no en un
+   * punt. Els tres colors es barregen amb color-mix segons --node, així que
+   * s'encén de manera contínua amb l'scroll i no cal cap transició.
+   */
+  .fita__node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: grid;
+    width: var(--node-mida);
+    height: var(--node-mida);
+    place-items: center;
+    border: 1.5px solid var(--line);
+    border-color: color-mix(in srgb, var(--clay) calc(var(--node) * 100%), var(--line));
+    border-radius: 50%;
+    background: var(--paper);
+    background: color-mix(in srgb, var(--clay) calc(var(--node) * 100%), var(--paper));
+    color: rgb(43 38 34 / 40%);
+    color: color-mix(in srgb, #fff calc(var(--node) * 100%), rgb(43 38 34 / 40%));
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
+  /* El carril pàl·lid sempre es veu sencer: és el camí que queda per fer. */
+  .fita__marca::before,
+  .fita__marca::after {
+    content: '';
+    position: absolute;
+    top: var(--node-mida);
+    bottom: calc(-1 * var(--linia-buit));
+    left: calc(var(--node-mida) / 2 - 0.75px);
+    width: 1.5px;
+    background: var(--line);
+  }
+
+  /* I al damunt, el tram ja recorregut. */
+  .fita__marca::after {
+    background: var(--clay);
+    transform: scaleY(var(--tram));
+    transform-origin: top;
+  }
+
+  /* En vertical la línia s'acaba al darrer node: no hi ha res a la seva dreta
+   * que quedi despenjat. En horitzontal sí, i per això més avall li surt cua.
+   */
+  .fita:last-child .fita__marca::before,
+  .fita:last-child .fita__marca::after {
+    display: none;
+  }
+
+  /* El cos entra amb la fita. La caixa —marges, vores, fons— la posa la secció.
+   */
+  .fita__cos {
+    opacity: var(--entrada);
+    transform: translateY(calc((1 - var(--entrada)) * 14px));
+  }
+
+  /* Aquí la línia gira: els nodes passen a estar en fila i cada tram creua el
+   * buit entre columnes fins al node següent.
+   */
+  @media (width >= #{$gir}) {
+    .linia {
+      --linia-buit: 1.5rem;
+
+      margin-top: 4rem;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
+    }
+
+    .fita {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
+    }
+
+    .fita__marca {
+      position: relative;
+      height: var(--node-mida);
+      margin-bottom: 1.5rem;
+    }
+
+    .fita__node {
+      position: relative;
+    }
+
+    .fita__marca::before,
+    .fita__marca::after {
+      top: calc(50% - 0.75px);
+      right: calc(-1 * var(--linia-buit));
+      bottom: auto;
+      left: var(--node-mida);
+      width: auto;
+      height: 1.5px;
+    }
+
+    .fita__marca::after {
+      transform: scaleX(var(--tram));
+      transform-origin: left;
+    }
+
+    /* La cua.
+     *
+     * Els nodes van arrenglerats amb la vora esquerra de la seva columna, així
+     * que una línia que s'aturés a l'últim node deixaria tot el seu tram de
+     * secció sense res al damunt. La línia continua fins al final i s'hi fon:
+     * tanca la composició sense insinuar un pas més que no existeix.
+     */
+    .fita:last-child .fita__marca::before,
+    .fita:last-child .fita__marca::after {
+      display: block;
+      right: 0;
+    }
+
+    .fita:last-child .fita__marca::before {
+      background: linear-gradient(to right, var(--line), transparent);
+    }
+
+    .fita:last-child .fita__marca::after {
+      background: linear-gradient(to right, var(--clay), transparent);
+    }
+
+    .fita__cos {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+  }
+}

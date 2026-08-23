@@ -1,0 +1,141 @@
+.tallers {
+  background: var(--sand);
+}
+
+.tallers__grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.tallers__text {
+  margin-top: 1.5rem;
+  color: rgb(43 38 34 / 68%);
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+.tallers__nota {
+  margin-top: 1.25rem;
+  color: rgb(43 38 34 / 55%);
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+}
+
+.tallers__cta {
+  margin-top: 2rem;
+}
+
+/* El mosaic
+ * ---------------------------------------------------------------------------
+ * Les quatre imatges no apareixen de cop: la directiva appProgres escriu
+ * `--progres` de 0 a 1 mentre el mosaic travessa la pantalla i d'aquest únic
+ * número en surt tot el moviment.
+ *
+ * Hi ha dues capes de moviment sobreposades:
+ *
+ *   · L'entrada de cada tessel·la —opacitat i pujada—, que és la cascada
+ *     compartida amb la resta de seccions.
+ *   · Una deriva de columna: la columna dreta puja més amunt que l'esquerra,
+ *     de manera que el mosaic es va desencaixant i quedant a lloc amb l'scroll
+ *     en comptes de ser un bloc rígid.
+ *
+ * Les dues es mesuren des de (1 - progres), així que totes dues valen zero
+ * quan el mosaic ha acabat d'entrar: el repòs és exactament la composició
+ * escalonada del disseny, i amb moviment reduït —on la directiva escriu 1
+ * directament— es veu així des del primer moment.
+ */
+.tallers__mosaic {
+  --arrencada: 0.02;
+  --pas: 0.11;
+  --velocitat: 3.4;
+
+  display: grid;
+
+  /* Cada tessel·la es queda a la seva alçada. Sense això s'estira fins a la de la
+   * seva companya de fila —que baixa amb el margin-top escalonat— i li queda un
+   * tros buit sota la foto: les cantonades arrodonides passen a ser les d'aquest
+   * buit i la imatge acaba amb els baixos quadrats.
+   */
+  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.tessella {
+  --deriva: 26px;
+
+  overflow: hidden;
+  margin: 0;
+  border-radius: 2rem;
+  opacity: var(--entrada);
+  transform: translateY(calc((1 - var(--progres)) * var(--deriva) + (1 - var(--entrada)) * 20px));
+}
+
+/* La columna de la dreta arrenca més avall i puja més de pressa. */
+.tessella:nth-child(even) {
+  --deriva: 62px;
+}
+
+.tessella:nth-child(2) {
+  margin-top: 2.5rem;
+}
+
+.tessella:nth-child(3) {
+  margin-top: -1rem;
+}
+
+.tessella:nth-child(4) {
+  margin-top: 1.5rem;
+}
+
+/* El zoom viu al marc i no a la imatge perquè les dues escales no es trepitgin:
+ * la del marc la mou l'scroll fotograma a fotograma i la de la imatge, el
+ * cursor amb una transició.
+ */
+.tessella__marc {
+  position: relative;
+  height: 220px;
+  transform: scale(calc(1 + (1 - var(--entrada)) * 0.1));
+}
+
+.tessella img {
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.tessella:hover img {
+  transform: scale(1.05);
+}
+
+@media (width >= 40rem) {
+  .tessella__marc {
+    height: 300px;
+  }
+}
+
+@media (width >= 48rem) {
+  /* Text a l'esquerra i mosaic a la dreta, com les 5 + 6 columnes del disseny
+   * de referència.
+   */
+  .tallers__grid {
+    align-items: center;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .tallers__intro {
+    grid-column: span 5;
+  }
+
+  .tallers__mosaic {
+    grid-column: 7 / span 6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tessella img,
+  .tessella:hover img {
+    transform: none;
+    transition: none;
+  }
+}

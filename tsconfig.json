@@ -10,6 +10,9 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+
+    /* Les proves carreguen els diccionaris de public/i18n directament. */
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",

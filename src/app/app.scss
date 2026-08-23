@@ -1,0 +1,41 @@
+/* Les seccions porten els seus propis estils.
+ *
+ * En pantalles prou altes, el hero i "La idea" comparteixen una sola pantalla.
+ * Per sota d'aquesta alçada no s'aplica, perquè encabir-les totes dues
+ * aixafaria el hero.
+ *
+ * Qui reparteix l'alçada és el hero, i ho fa contra la finestra i no contra el
+ * que hi ha a sota: es queda els seus 46svh passi el que passi i "La idea"
+ * s'endú la resta.
+ *
+ * Abans era a l'inrevés —el hero cedia l'alçada que necessités la secció de
+ * sota— i això el lligava a com queia el text. N'hi havia prou que una targeta
+ * de "La idea" guanyés o perdés una línia perquè el hero canviés d'alçada: en
+ * canviar d'idioma feia un salt de fins a 80px, perquè la tercera targeta ocupa
+ * una línia més en català que en anglès. Lligant-lo a la finestra, l'alçada del
+ * hero ja no depèn de cap text i no se n'ha d'estar pendent en tocar la còpia
+ * ni en afegir un idioma.
+ *
+ * Si algun dia "La idea" necessita més del que li queda, creix ella i el bloc
+ * passa dels 100svh: val més fer una mica de scroll que aixafar el hero.
+ */
+@media (height >= 860px) {
+  .fold {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+  }
+
+  app-hero {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    min-height: 46svh;
+  }
+
+  app-idea {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+}

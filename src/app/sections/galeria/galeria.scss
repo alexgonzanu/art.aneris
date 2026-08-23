@@ -1,0 +1,109 @@
+.galeria {
+  padding-block: 2rem 6rem;
+  background: var(--paper);
+  scroll-margin-top: 6rem;
+}
+
+.galeria__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.galeria__text {
+  max-width: 28rem;
+  color: rgb(43 38 34 / 55%);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+}
+
+.galeria__grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.galeria__columna {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* L'alçada viu a la figura i no a la imatge: amb NgOptimizedImage la imatge
+ * omple el contenidor, i és el contenidor qui reserva el lloc abans que la
+ * fotografia arribi.
+ */
+.peca {
+  position: relative;
+  height: 270px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.peca img {
+  object-fit: cover;
+}
+
+/* Entrada en fer scroll: la peça puja i el zoom de la imatge s'obre.
+ * L'opacitat i el desplaçament els porta .reveal; aquí només el zoom, que és
+ * el que dona la sensació de càmera.
+ */
+.peca img {
+  transform: scale(1.09);
+  transition: transform 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.peca.reveal--visible img {
+  transform: scale(1);
+}
+
+/* Zoom en passar-hi per sobre, com al disseny de referència. */
+.peca:hover img {
+  transform: scale(1.035);
+}
+
+@media (width >= 48rem) {
+  .galeria {
+    padding-block: 2.5rem 8rem;
+  }
+
+  .galeria__intro {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .galeria__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .peca--gran {
+    grid-column: span 5;
+  }
+
+  .peca--gran {
+    height: 560px;
+  }
+
+  .galeria__columna {
+    grid-column: span 7;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .peca--ampla {
+    grid-column: span 2;
+  }
+}
+
+@media (width >= 40rem) {
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peca img,
+  .peca.reveal--visible img,
+  .peca:hover img {
+    transform: none;
+    transition: none;
+  }
+}

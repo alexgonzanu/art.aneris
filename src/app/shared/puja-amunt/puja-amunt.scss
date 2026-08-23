@@ -1,0 +1,55 @@
+/* Cercle fix a baix a la dreta, sempre a la vista mentre es fa scroll.
+ *
+ * És `fixed` i no `absolute`: `absolute` el deixaria ancorat al document i
+ * marxaria amunt amb la resta de la pàgina.
+ */
+
+.puja {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+
+  /* Per sobre de la capçalera flotant (z-index 50). */
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--clay);
+  box-shadow: var(--ombra-suau);
+  color: #fff;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.puja:hover {
+  background: var(--ink);
+  transform: translateY(-2px);
+}
+
+.puja svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+@media (width >= 48rem) {
+  .puja {
+    right: 2rem;
+    bottom: 2rem;
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .puja {
+    transition: none;
+  }
+
+  .puja:hover {
+    transform: none;
+  }
+}

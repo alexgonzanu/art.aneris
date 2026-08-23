@@ -1,0 +1,230 @@
+@use '../linia' as *;
+
+.sequencia {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.sequencia--paper {
+  background: var(--paper);
+}
+
+/* El dibuix del fons
+ * ---------------------------------------------------------------------------
+ * De sèrie són les corbes de nivell d'un mapa, com al disseny de referència:
+ * prou marcades per llegir-s'hi i prou fluixes per no competir amb les fotos.
+ * A les empremtes els cercles es tanquen i el mateix dibuix passa a llegir-se
+ * com els solcs d'una empremta dactilar.
+ */
+.sequencia::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -20%;
+  background: repeating-radial-gradient(
+    ellipse at 64% 38%,
+    transparent 0 18px,
+    rgb(43 38 34 / 13%) 19px 20px,
+    transparent 21px 36px
+  );
+  opacity: 0.18;
+  pointer-events: none;
+  transform: rotate(-10deg) scale(1.15);
+}
+
+.sequencia--empremta::before {
+  background: repeating-radial-gradient(
+    circle at 32% 44%,
+    transparent 0 13px,
+    rgb(43 38 34 / 13%) 14px 15px,
+    transparent 16px 28px
+  );
+  opacity: 0.16;
+  transform: rotate(12deg) scale(1.1);
+}
+
+.sequencia__grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.sequencia__text {
+  margin-top: 1.5rem;
+  color: rgb(43 38 34 / 68%);
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+.sequencia__nota {
+  margin-top: 1.25rem;
+  color: rgb(43 38 34 / 55%);
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+}
+
+.sequencia__cta {
+  margin-top: 2rem;
+}
+
+/* El plafó
+ * ---------------------------------------------------------------------------
+ * La seqüència 01 → 02 → 03 és la mateixa línia del temps que la secció del
+ * procés, però aquí viu dins d'una targeta i en una columna més estreta: gira
+ * a horitzontal abans, a 48rem, i els nodes i els peus s'encongeixen perquè hi
+ * càpiguen tres columnes sense ofegar-se.
+ *
+ * El plafó sempre va del color contrari al de la secció, per destacar-hi a
+ * sobre.
+ */
+.sequencia__panell {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+  background: var(--paper);
+  box-shadow: var(--ombra-suau);
+}
+
+.sequencia--paper .sequencia__panell {
+  background: var(--sand);
+}
+
+@include linia(48rem);
+
+/* Va just a sobre del tancament de la targeta i no sota cap intro, així que
+ * no li cal el marge superior que porta de sèrie. L'override va després de
+ * l'@include a posta: així guanya també dins dels punts de ruptura del mixin.
+ */
+.linia {
+  --node-mida: 2.2rem;
+
+  margin-top: 0;
+}
+
+.fita__media {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  border-radius: 1.5rem;
+  background: var(--sand);
+}
+
+.sequencia--paper .fita__media {
+  background: var(--paper);
+}
+
+/* Mateixa sensació de càmera que al procés: el zoom es va tancant amb
+ * l'entrada de la fita.
+ */
+.fita__media img {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(calc(1 + (1 - var(--entrada)) * 0.09));
+}
+
+/* Els passos que encara no tenen fotografia reserven la mateixa caixa quadrada
+ * que ocuparà: quan arribin, no es mourà res de lloc.
+ */
+.fita__media--espera {
+  display: grid;
+  place-items: center;
+  border-style: dashed;
+  background: color-mix(in srgb, var(--paper) 70%, var(--sand));
+}
+
+.fita__espera {
+  color: rgb(43 38 34 / 32%);
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+
+.fita__etiqueta {
+  margin-top: 1rem;
+  color: rgb(43 38 34 / 40%);
+  font-family: var(--sans);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.fita__peu {
+  margin-top: 0.35rem;
+  color: rgb(43 38 34 / 60%);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.4rem;
+}
+
+.sequencia__tancament {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.sequencia__resum {
+  color: rgb(43 38 34 / 55%);
+  font-size: 0.875rem;
+}
+
+.sequencia__segell {
+  color: var(--clay);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (width >= 48rem) {
+  /* Text a l'esquerra i plafó a la dreta, com les 4 + 7 columnes del disseny
+   * de referència, centrats l'un respecte a l'altre.
+   */
+  .sequencia__grid {
+    align-items: center;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .sequencia__intro {
+    grid-column: span 4;
+  }
+
+  .sequencia__panell {
+    grid-column: 6 / span 7;
+  }
+
+  /* Ja en fila: el buit entre passos s'ajusta a l'amplada de la targeta. */
+  .linia {
+    --linia-buit: 1rem;
+  }
+
+  .fita__marca {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .sequencia__panell {
+    padding: 1.75rem;
+  }
+
+  .linia {
+    --linia-buit: 1.25rem;
+  }
+
+  /* Els tres peus reserven les mateixes dues línies perquè les columnes
+   * acabin igualades.
+   */
+  .fita__peu {
+    min-height: calc(1.4rem * 2);
+  }
+}

@@ -1,0 +1,9 @@
+/.angular
+/dist
+/node_modules
+/coverage
+package-lock.json
+/recursos
+
+# Generat per scripts/fonts.mjs
+/src/_fonts.scss

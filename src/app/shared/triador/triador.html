@@ -1,0 +1,63 @@
+<button
+  class="triador__camp camp__control"
+  type="button"
+  role="combobox"
+  [id]="identificador()"
+  [disabled]="deshabilitat()"
+  [class.triador__camp--buit]="!triada()"
+  [attr.aria-expanded]="obert()"
+  [attr.aria-controls]="obert() ? llista() : null"
+  [attr.aria-activedescendant]="obert() && actiu() ? idOpcio(actiu()) : null"
+  [attr.aria-labelledby]="etiquetadaPer() ?? null"
+  [attr.aria-describedby]="descripcio() ?? null"
+  [attr.aria-invalid]="incorrecte()"
+  aria-haspopup="listbox"
+  (click)="commuta()"
+>
+  <span class="triador__text">{{ text() | translate }}</span>
+
+  <svg
+    class="triador__fletxa"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    aria-hidden="true"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="m7 10 5 5 5-5" />
+  </svg>
+</button>
+
+@if (obert()) {
+  <!-- El ratolí no ha de robar el focus al camp: si el botó el perd, la llista
+       es tanca abans que el clic arribi a l'opció. -->
+  <ul
+    class="triador__llista"
+    role="listbox"
+    [id]="llista()"
+    [attr.aria-labelledby]="etiquetadaPer() ?? null"
+    (mousedown)="$event.preventDefault()"
+  >
+    @for (opcio of opcions(); track opcio.valor) {
+      <!-- El focus real no es mou del camp: qui marca l’opció activa és el seu
+           aria-activedescendant i el teclat la governa des d’allà. Les opcions,
+           doncs, no són focusables a posta, que és el patró d’un desplegable de
+           només triar. -->
+      <!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus -->
+      <li
+        class="triador__opcio"
+        role="option"
+        [id]="idOpcio(opcio.valor)"
+        [attr.data-valor]="opcio.valor"
+        [attr.aria-selected]="opcio.valor === valor()"
+        [class.triador__opcio--activa]="opcio.valor === actiu()"
+        [class.triador__opcio--triada]="opcio.valor === valor()"
+        (click)="tria(opcio)"
+      >
+        <span class="triador__marca" aria-hidden="true"></span>
+
+        {{ opcio.text | translate }}
+      </li>
+    }
+  </ul>
+}
