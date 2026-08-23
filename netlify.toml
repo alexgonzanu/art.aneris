@@ -7,6 +7,14 @@
   command = "npm run build"
   publish = "dist/art.aneris/browser"
 
+[build.environment]
+  # El detector de secrets de Netlify busca pels fitxers el valor de qualsevol
+  # variable d'entorn, i el de SMTP_HOST surt a la documentació —que és on ha
+  # de sortir: «smtp.gmail.com» és una adreça pública de Google, no cap
+  # credencial. L'únic secret de debò és SMTP_PASS, i aquest se segueix
+  # vigilant, igual que SMTP_USER i CORREU_DESTI.
+  SECRETS_SCAN_OMIT_KEYS = "SMTP_HOST"
+
 # El formulari crida /api/contacte, que és una adreça neta i del mateix domini:
 # així no hi ha CORS pel mig. Ha d'anar abans del comodí de sota, que si no se
 # l'empassa ell.
