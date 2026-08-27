@@ -5,8 +5,8 @@
  * aixafaria el hero.
  *
  * Qui reparteix l'alçada és el hero, i ho fa contra la finestra i no contra el
- * que hi ha a sota: es queda els seus 46svh passi el que passi i "La idea"
- * s'endú la resta.
+ * que hi ha a sota: es queda el seu 60% passi el que passi i "La idea"
+ * s'endú el 40% restant.
  *
  * Abans era a l'inrevés —el hero cedia l'alçada que necessités la secció de
  * sota— i això el lligava a com queia el text. N'hi havia prou que una targeta
@@ -30,7 +30,7 @@
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
-    min-height: 46svh;
+    min-height: 60svh;
   }
 
   app-idea {

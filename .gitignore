@@ -56,3 +56,11 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+DESPLEGAMENT.md
+/imatges/*.heif
+/imatges/hero5.PNG
+/imatges/hero-obra-granats-capes.jpg
+/imatges/hero-obra-granats-franja.jpg
+/imatges/obra-mar.jpg
+/imatges/obra-platja.jpg

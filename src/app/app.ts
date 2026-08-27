@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Contacte } from './sections/contacte/contacte';
-import { Empremtes } from './sections/empremtes/empremtes';
 import { Formes } from './sections/formes/formes';
 import { Galeria } from './sections/galeria/galeria';
 import { Hero } from './sections/hero/hero';
@@ -8,6 +7,7 @@ import { Idea } from './sections/idea/idea';
 import { Peu } from './sections/peu/peu';
 import { Preguntes } from './sections/preguntes/preguntes';
 import { Proces } from './sections/proces/proces';
+import { Regals } from './sections/regals/regals';
 import { Rutes } from './sections/rutes/rutes';
 import { SiteHeader } from './sections/site-header/site-header';
 import { Tallers } from './sections/tallers/tallers';
@@ -26,7 +26,7 @@ import { PujaAmunt } from './shared/puja-amunt/puja-amunt';
     Formes,
     Proces,
     Rutes,
-    Empremtes,
+    Regals,
     Tallers,
     Contacte,
     Preguntes,

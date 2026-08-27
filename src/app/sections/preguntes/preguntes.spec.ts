@@ -33,7 +33,7 @@ describe('Preguntes', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const botons = [...compiled.querySelectorAll<HTMLButtonElement>('.pregunta__boto')];
 
-    expect(botons.length).toBe(4);
+    expect(botons.length).toBe(7);
 
     for (const boto of botons) {
       const resposta = compiled.querySelector(`#${boto.getAttribute('aria-controls')}`);

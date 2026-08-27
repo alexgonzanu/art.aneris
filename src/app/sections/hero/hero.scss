@@ -4,16 +4,41 @@
   background: var(--night);
 }
 
+/* Es declara contenidor de mida perquè la fotografia, que va girada, es pugui
+ * demanar les mides d'aquesta caixa des de dins amb cqw i cqh. Sense això no
+ * hi ha manera de dir en CSS «tan ample com alt és el hero».
+ */
 .hero__media {
   position: absolute;
   inset: 0;
+  container-type: size;
 }
 
+/* La fotografia va girada un quart de volta.
+ *
+ * En girar-la, l'ample i l'alt s'intercanvien: per omplir un hero de Wc × Hc,
+ * la imatge ha de fer Hc d'ample i Wc d'alt abans de girar. Les mides porten
+ * !important perquè l'atribut fill de NgOptimizedImage les escriu en línia.
+ *
+ * Amb l'origen a dalt a l'esquerra el gir se l'endú sencera cap a fora per
+ * l’esquerra, i el translate la torna a lloc. La llista es llegeix de dreta a
+ * esquerra: primer es desplaça dins del seu propi sistema i després gira, de
+ * manera que aquell -100% vertical acaba essent el desplaçament horitzontal
+ * que la centra.
+ */
 .hero__image {
-  width: 100%;
-  height: 100%;
+  width: 100cqh !important;
+  height: 100cqw !important;
+  transform-origin: top left;
+  transform: rotate(90deg) translateY(-100%);
   object-fit: cover;
-  object-position: center center;
+
+  /* Compte amb els eixos: object-position treballa sobre la caixa sense girar,
+   * així que el primer valor —el que sembla horitzontal— és el que mou la
+   * fotografia amunt i avall a la pantalla. Com més alt, més amunt puja el gra
+   * gruixut: al 0% queda al mig i al 50% se'n va a dalt de tot.
+   */
+  object-position: 25% center;
 }
 
 /* Vels del disseny de referència.

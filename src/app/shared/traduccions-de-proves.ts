@@ -3,6 +3,7 @@ import { TranslateLoader, TranslationObject, provideTranslateService } from '@ng
 import { Observable, of } from 'rxjs';
 import ca from '../../../public/i18n/ca.json';
 import en from '../../../public/i18n/en.json';
+import es from '../../../public/i18n/es.json';
 
 /* Les proves fan servir els diccionaris de debò i no una còpia retallada: si
  * algú es deixa una clau en afegir un text, les proves ho han de notar igual
@@ -10,7 +11,9 @@ import en from '../../../public/i18n/en.json';
  */
 class CarregadorDeProves extends TranslateLoader {
   getTranslation(idioma: string): Observable<TranslationObject> {
-    return of((idioma === 'en' ? en : ca) as TranslationObject);
+    const diccionaris: Record<string, unknown> = { ca, es, en };
+
+    return of((diccionaris[idioma] ?? ca) as TranslationObject);
   }
 }
 

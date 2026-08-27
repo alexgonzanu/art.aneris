@@ -27,7 +27,7 @@ describe('App', () => {
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     const labels = [...compiled.querySelectorAll('.card__label')].map((el) => el.textContent);
-    expect(labels).toEqual(['Un lloc', 'Una ruta', 'Un moment vital', 'Una sensació']);
+    expect(labels).toEqual(['Un lloc', 'Una ruta', 'Un record', 'Una sensació']);
   });
 
   it('preselects the form topic when arriving from a call to action', async () => {
@@ -51,8 +51,8 @@ describe('App', () => {
         el.textContent?.trim(),
       );
 
-    expect(etiquetes('#rutes')).toEqual(['Ruta', 'Relleu i paisatge', 'Obra final']);
-    expect(etiquetes('#empremtes')).toEqual(['Empremta', 'Relleu i matèria', 'Obra final']);
+    expect(etiquetes('#rutes')).toEqual(['La ruta', 'Relleu i paisatge', 'L’obra']);
+    expect(etiquetes('#regals')).toEqual(['La intenció', 'Descobrim la història', 'L’obra']);
   });
 
   it('swaps the whole page over when another language is picked', async () => {
@@ -71,10 +71,27 @@ describe('App', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Art born');
 
     // El text que viu a les dades d'una secció també ha de canviar.
-    expect(compiled.querySelector('#rutes .fita__etiqueta')?.textContent?.trim()).toBe('Route');
+    expect(compiled.querySelector('#rutes .fita__etiqueta')?.textContent?.trim()).toBe('The route');
 
     // I el lang del document, que és qui ho diu als lectors de pantalla.
     expect(document.documentElement.lang).toBe('en');
+
+    const castella = [...compiled.querySelectorAll<HTMLButtonElement>('.idiomes__opcio')].find(
+      (boto) => boto.textContent?.trim() === 'es',
+    );
+    castella?.click();
+    await fixture.whenStable();
+
+    expect(compiled.querySelector('h1')?.textContent).toContain('Arte que nace');
+
+    /* Es mira una etiqueta dels regals i no una de les rutes perquè «La ruta»
+     * s'escriu igual en català i en castellà, i no diria res.
+     */
+    expect(compiled.querySelector('#regals .fita__etiqueta')?.textContent?.trim()).toBe(
+      'La intención',
+    );
+
+    expect(document.documentElement.lang).toBe('es');
   });
 
   it('leaves no untranslated key on the page', async () => {

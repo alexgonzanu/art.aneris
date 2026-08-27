@@ -7,14 +7,14 @@
     "idea": "the idea",
     "comFunciona": "how it works",
     "rutes": "routes",
-    "empremtes": "prints",
+    "regals": "gifts",
     "tallers": "workshops",
     "contacte": "contact"
   },
   "hero": {
     "titol": "Art born\nfrom what\nmakes you feel.",
-    "lead": "One-of-a-kind pieces created from the places, moments and emotions that are part of your story.",
-    "cta": "see how it works",
+    "lead": "Handmade textured art pieces made from your story",
+    "cta": "See how it works",
     "alt": "Textured art.aneris piece in deep red tones"
   },
   "idea": {
@@ -27,137 +27,140 @@
     },
     "ruta": {
       "etiqueta": "A route",
-      "text": "The day you reached a summit that meant far more than the distance."
+      "text": "A walk, a summit or a day that meant far more than the kilometres."
     },
     "momentVital": {
-      "etiqueta": "A life moment",
-      "text": "A shared memory you don’t want to be just one more photo: your baby’s tiny hands, your pet’s little paws."
+      "etiqueta": "A memory",
+      "text": "A life moment you don’t want time to erase."
     },
     "sensacio": {
       "etiqueta": "A feeling",
-      "text": "A colour, a chapter or an emotion you don’t yet know how to put into images."
+      "text": "A colour, a chapter or an emotion you might not know how to put into words."
     }
   },
   "galeria": {
     "eyebrow": "art.aneris works",
     "titol": "A story can take many forms.",
-    "altMarInterior": "art.aneris sea piece set in an interior",
-    "altBosc": "Textured piece inspired by a forest",
-    "altAbstractaTerracota": "Detail of a textured abstract piece in terracotta tones",
-    "altMuntanyaRelleu": "art.aneris mountain piece in relief"
+    "altEmpremtes": "art.aneris relief piece with a baby’s handprint and two footprints in sand tones",
+    "altMuntanyaRelleu": "Detail of a mountain range piece in white textured relief",
+    "altDetallTextura": "A hand touching the relief of an art.aneris piece in sand and burgundy tones",
+    "altBosc": "Textured piece inspired by a forest"
   },
   "formes": {
     "eyebrow": "How do you want to live art.aneris?",
-    "titol": "One idea. Four ways to make it yours.",
+    "titol": "One idea. Four ways to make it real",
     "encarrecs": {
-      "etiqueta": "Commissions",
+      "etiqueta": "Bespoke pieces",
       "titol": "I want a one-off piece",
       "text": "A memory, a place or a moment turned into a piece created specifically for you.",
-      "enllac": "Commission it"
+      "enllac": "Share my idea"
     },
     "rutes": {
       "etiqueta": "Routes",
       "titol": "I want to immortalise a route",
-      "text": "The mountain, the track and the meaning of a day you don’t want to forget, reinterpreted in relief.",
-      "enllac": "Transform it"
+      "text": "The mountain, the track and the meaning of a day you don’t want to forget.",
+      "enllac": "Send my route"
     },
     "regals": {
       "etiqueta": "Gifts",
-      "titol": "I want to capture a life moment",
-      "text": "First you give the story; then the piece is created with whoever receives it.",
-      "enllac": "Give it in two steps"
+      "titol": "I want to capture a memory",
+      "text": "You give the beginning. The piece is then created with whoever receives it.",
+      "enllac": "Do it in two steps"
     },
     "cocreacio": {
       "etiqueta": "Co-creation",
       "titol": "I want to make it myself",
-      "text": "Learn the technique and create a piece of your own — no identical templates.",
-      "enllac": "Let’s do it together"
+      "text": "Learn, experiment and create textures with my help.",
+      "enllac": "Find out more"
     }
   },
   "proces": {
     "eyebrow": "From meaning to matter",
-    "titol": "Art you have a story to tell about.",
+    "titol": "You bring the story. I give it form.",
+    "text": "You don’t need to know what the piece should look like before you write to me.",
     "partida": {
       "titol": "The starting point",
-      "detall": "Memory / route / place",
-      "cita": "It’s our anniversary and I want to give her a little piece of the sea — she always goes there with our dog Meeko when she needs quiet and a break from the noise of everyday life.",
+      "detall": "Place / route / memory / feeling",
+      "cita": "It’s our anniversary and I want to give her a little piece of the sea. She always goes there with our dog Meeko when she needs quiet and a break from the noise of everyday life. I want her to have that feeling at home too.",
       "hora": "09:41",
-      "peu": "You tell me what’s behind it: what happened, why it matters and what you don’t want to lose over time."
+      "peu": "You tell me what’s behind it: what happened, why it’s important and what you wouldn’t want to lose over time."
     },
     "interpretacio": {
       "titol": "The interpretation",
-      "detall": "Form / relief / colour",
+      "detall": "Texture / Form / Colour",
       "alt": "Detail with footprints on a textured piece inspired by the sea",
-      "peu": "I look for a composition that keeps the emotion without spelling it out: silhouettes, layers, strokes, paths and textures."
+      "peu": "I look for a composition that keeps the essence without spelling it out. Silhouettes, layers, paths, textures and colours turn the story into matter."
     },
     "obra": {
       "titol": "The piece",
       "detall": "One of a kind",
       "alt": "Living room with a textured art.aneris sea piece",
-      "peu": "The memory stops being an image saved on your phone and becomes a piece with a place in your home."
+      "peu": "Your story stops living in your head or in a photograph. It becomes a piece made to have a place in your home."
     }
   },
   "rutes": {
-    "eyebrow": "The line that sets it apart",
+    "eyebrow": "A line that becomes relief",
     "titol": "Some routes last far longer than the day you walk them.",
-    "text": "Send me a Strava route, a summit or a walk that mattered. The track, the profile of the mountain and what that day meant to you become a one-of-a-kind piece.",
-    "nota": "The route stops being data inside an app and becomes part of your home.",
-    "cta": "Send me a route",
+    "text": "Send me a Strava route, a summit or a walk that mattered. The track, the profile of the mountain, the landscape and what that day meant to you become a one-of-a-kind piece.",
+    "nota": "The route stops being data stored inside an app.",
+    "cta": "Send my route",
     "pas1": {
-      "etiqueta": "Route",
-      "peu": "The original track that sets the piece in motion.",
+      "etiqueta": "The route",
+      "peu": "The original track is where the piece begins.",
       "alt": "Map with the original route track"
     },
     "pas2": {
       "etiqueta": "Relief and landscape",
-      "peu": "The route turns into form, volume and landscape.",
+      "peu": "I turn the track into a proposal of relief, landscape and colour before taking it to the canvas.",
       "alt": "Interpretation of the relief and the landscape from the route"
     },
     "pas3": {
-      "etiqueta": "Finished piece",
-      "peu": "The story ends up as a piece for your home.",
+      "etiqueta": "The piece",
+      "peu": "The route ends up as a piece made to remember far more than the kilometres.",
       "alt": "Finished textured piece inspired by the route"
     },
     "resum": "Route → relief and landscape → piece",
     "segell": "The story carries on, on your wall"
   },
-  "empremtes": {
-    "eyebrow": "The Empremtes collection",
-    "titol": "Some memories begin with a print.",
-    "text": "The Empremtes collection exists to keep what is so often small, fragile and immense all at once: a baby’s tiny hands and feet, or the paws of a dog or a cat that are part of your story.",
-    "nota": "The print is worked into the piece so the memory lasts.",
-    "cta": "Order your print",
+  "regals": {
+    "eyebrow": "A gift in two steps",
+    "titol": "Give the beginning. We’ll create the piece later.",
+    "text": "Some gifts are too personal to decide entirely on someone else’s behalf. If you want to give a piece but would rather the person receiving it took part in creating it, you can give the beginning of the story.",
+    "cta": "Give it in two steps",
     "pas1": {
-      "etiqueta": "Print",
-      "peu": "The real mark of tiny hands, little feet or paws."
+      "etiqueta": "The intention",
+      "peu": "A gift that says there is a piece waiting to be made.",
+      "alt": "Gift wrapped in kraft paper with dried flowers and an art.aneris tag"
     },
     "pas2": {
-      "etiqueta": "Relief and matter",
-      "peu": "The print is worked into the piece, delicate and organic."
+      "etiqueta": "We uncover the story",
+      "peu": "Whoever receives it, or the two of you together, tell me what you would like to turn into a piece.",
+      "alt": "Two people around a table with sketches, photographs and colour samples"
     },
     "pas3": {
-      "etiqueta": "Finished piece",
-      "peu": "The memory takes on body and presence."
+      "etiqueta": "The piece",
+      "peu": "That story takes shape in a piece created specifically for them.",
+      "alt": "Relief piece of mountains in terracotta tones resting on a wooden shelf"
     },
-    "resum": "Print → relief and matter → piece",
-    "segell": "The memory stays home"
+    "resum": "Intention → story → piece"
   },
   "tallers": {
-    "eyebrow": "Workshops and co-creation",
-    "titol": "You won’t come to copy the same painting as everyone else.",
-    "text": "In every workshop you learn the technique, but the piece is yours. Different compositions, textures and colours, so you leave with a work that really has a place in your home.",
-    "nota": "No previous experience needed. I’m there with you so you can make your own creative decisions instead of freezing in front of a blank canvas.",
-    "cta": "I want to join a workshop",
-    "altMaterials": "Materials and tools used to create textured art",
-    "altPecaProces": "Textured piece in progress in terracotta tones",
-    "altDetallTextura": "Detail of texture and matter in an art.aneris piece",
-    "altProcesCreatiu": "The art.aneris creative process"
+    "eyebrow": "Workshops | co-creation",
+    "titol": "You won’t come to repeat the same painting as everyone else.",
+    "text": "In every workshop you’ll learn the technique, but the piece will be yours. You’ll decide the composition, the textures and the colours, so you leave with a work you actually want to hang at home.",
+    "nota": "No previous experience needed.",
+    "acompanyament": "I’m with you throughout the process so you can make your own creative decisions instead of standing in front of the canvas not knowing where to begin.",
+    "cta": "I want to do a workshop",
+    "altModelant": "Person shaping the texture of a piece with a small tool in an art.aneris workshop",
+    "altObraTerracota": "Person smiling with their finished piece, in terracotta tones with a gold detail",
+    "altPeuets": "Painting a child’s foot with gold paint to press it onto the canvas, in an art.aneris workshop",
+    "altObraCoure": "Person smiling with their finished piece, in sand tones with a copper band"
   },
   "contacte": {
     "eyebrow": "Let’s talk",
-    "titol": "Tell me your idea and let’s make it real",
+    "titol": "Tell me what’s on your mind. Let’s find its form.",
     "textFort": "Your idea doesn’t have to be clear yet.",
-    "text": "You can write to me with just a photo, a route, a place or a story. I’ll help you find the best way to turn it into a piece or an experience.",
+    "text": "You can write to me with just a photograph, a route, a place, a print or a story. From there we’ll find the best way to turn it into a one-of-a-kind piece or experience.",
     "tambeEm": "You can also find me at",
     "instagramAria": "art.aneris on Instagram",
     "nom": {
@@ -175,7 +178,7 @@
       "avis": "Pick where we start.",
       "recordObra": "Turn a place or feeling into a piece",
       "ruta": "Turn a route or mountain into a piece",
-      "momentVital": "Turn a life moment into a piece",
+      "momentVital": "Turn a memory into a piece",
       "taller": "Join a workshop",
       "cocreacio": "Create a piece together / co-creation",
       "altra": "Something else"
@@ -205,22 +208,34 @@
   },
   "preguntes": {
     "eyebrow": "Frequently asked questions",
-    "titol": "Before we start.",
+    "titol": "Before we begin.",
     "ideaClara": {
       "questio": "Do I need to know exactly how I want the piece?",
-      "resposta": "No. You can come with just a story, a photo, a route or a feeling. Part of the process is precisely finding the way to turn that into a visual proposal."
+      "resposta": "No. You can come with just a story, a photograph, a route, a place or a feeling. Part of the process is precisely finding a way to turn what it means to you into a visual proposal."
+    },
+    "encarrec": {
+      "questio": "How does a custom commission work?",
+      "resposta": "First you tell me what you want to turn into a piece and what lies behind it. Then we settle the starting point, the format and the approach before I begin creating it. You don’t need to have every decision made before you write to me. We talk it through and give it shape together."
+    },
+    "preu": {
+      "questio": "How much does a piece cost?",
+      "resposta": "Every piece is different. The price depends mainly on the size, the format, the technique and the kind of personalisation. Once you tell me what you have in mind, I can guide you through the options that best fit your idea and put a proposal together for you."
+    },
+    "termini": {
+      "questio": "How long does it take to be ready?",
+      "resposta": "It depends on the kind of piece and on when you place the commission. Before starting I’ll give you an approximate timeframe so you know when you can have it. If you need it for a particular date, tell me when you write."
     },
     "strava": {
-      "questio": "Can I have a piece made from a Strava route?",
-      "resposta": "Yes. You can send a screenshot or the route data. The track is the starting point for building the relief and connecting it to the landscape, the summit or the story of that day."
+      "questio": "Can I create a piece from a Strava route?",
+      "resposta": "Yes. You can send me the route or a screenshot with the details of the track. The track becomes the starting point for building the composition and connecting it to the relief, the landscape and the story of that day."
     },
     "regal": {
       "questio": "Can I gift a piece without deciding it for the other person?",
-      "resposta": "Yes. The two-step gift lets you give the intention and the experience first. The piece is then built with the person who will receive it."
+      "resposta": "Yes. With A gift in two steps, you give the beginning and the piece is created afterwards with the person who receives it. That way they can take part in the creative decisions and turn a story of their own into a piece made especially for them."
     },
     "tallers": {
-      "questio": "Are the workshops only for experienced people?",
-      "resposta": "No previous experience needed. You’ll learn the technique and be guided through the process, but the creative decisions and the final piece will be yours."
+      "questio": "Are the workshops for people with experience?",
+      "resposta": "No previous experience needed. You’ll learn the technique and have support throughout the process, but the composition, the textures, the colours and the final piece will be yours."
     }
   },
   "peu": {

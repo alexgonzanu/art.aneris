@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Injectable, computed, effect, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-export const IDIOMES = ['ca', 'en'] as const;
+export const IDIOMES = ['ca', 'es', 'en'] as const;
 
 export type Idioma = (typeof IDIOMES)[number];
 

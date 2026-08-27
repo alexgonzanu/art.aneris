@@ -7,41 +7,44 @@
       </div>
     </header>
 
+    <!-- L'ordre de les peces és el de la graella i no el de lectura del fitxer:
+         la primera és la gran de l'esquerra i les altres tres omplen la columna
+         de la dreta de dalt a baix. -->
     <div class="galeria__grid">
       <figure class="peca peca--gran" appReveal>
         <img
-          ngSrc="obra-mar-interior"
+          ngSrc="obra-empremtes"
           fill
           sizes="(min-width: 768px) 42vw, 100vw"
-          [alt]="'galeria.altMarInterior' | translate"
+          [alt]="'galeria.altEmpremtes' | translate"
         />
       </figure>
 
       <div class="galeria__columna">
         <figure class="peca" [appReveal]="120">
           <img
-            ngSrc="obra-bosc"
+            ngSrc="obra-muntanya-relleu"
             fill
             sizes="(min-width: 768px) 29vw, 100vw"
-            [alt]="'galeria.altBosc' | translate"
+            [alt]="'galeria.altMuntanyaRelleu' | translate"
           />
         </figure>
 
         <figure class="peca" [appReveal]="240">
           <img
-            ngSrc="obra-abstracta-terracota"
+            ngSrc="taller-detall-textura"
             fill
-            sizes="(min-width: 768px) 29vw, 100vw"
-            [alt]="'galeria.altAbstractaTerracota' | translate"
+            sizes="(min-width: 768px) 58vw, 100vw"
+            [alt]="'galeria.altDetallTextura' | translate"
           />
         </figure>
 
         <figure class="peca peca--ampla" [appReveal]="360">
           <img
-            ngSrc="obra-muntanya-relleu"
+            ngSrc="obra-bosc"
             fill
-            sizes="(min-width: 768px) 58vw, 100vw"
-            [alt]="'galeria.altMuntanyaRelleu' | translate"
+            sizes="(min-width: 768px) 29vw, 100vw"
+            [alt]="'galeria.altBosc' | translate"
           />
         </figure>
       </div>

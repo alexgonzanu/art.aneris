@@ -7,14 +7,14 @@
     "idea": "la idea",
     "comFunciona": "com funciona",
     "rutes": "rutes",
-    "empremtes": "empremtes",
+    "regals": "regals",
     "tallers": "tallers",
     "contacte": "contacte"
   },
   "hero": {
     "titol": "Art que neix\nd’allò que\net fa sentir.",
-    "lead": "Obres úniques creades a partir de llocs, moments i emocions que formen part de la teva història.",
-    "cta": "descobreix com funciona",
+    "lead": "Obres d'art texturat fetes a mà a partir de la teva història",
+    "cta": "Descobreix com funciona",
     "alt": "Obra texturada en tons granats d’art.aneris"
   },
   "idea": {
@@ -27,137 +27,140 @@
     },
     "ruta": {
       "etiqueta": "Una ruta",
-      "text": "El dia que vas arribar a un cim que significava molt més que els quilòmetres."
+      "text": "Un recorregut, un cim o un dia que va significar molt més que els quilòmetres."
     },
     "momentVital": {
-      "etiqueta": "Un moment vital",
-      "text": "Un record compartit que no vols que sigui només una foto més: les manetes del teu bebè, les potetes del teu animaló."
+      "etiqueta": "Un record",
+      "text": "Un moment vital que no vols que el temps esborri."
     },
     "sensacio": {
       "etiqueta": "Una sensació",
-      "text": "Un color, una etapa o una emoció que encara no saps com explicar visualment."
+      "text": "Un color, una etapa o una emoció que potser no saps explicar amb paraules."
     }
   },
   "galeria": {
     "eyebrow": "Obres d’art.aneris",
     "titol": "Una història pot prendre moltes formes.",
-    "altMarInterior": "Obra de mar d’art.aneris integrada en un interior",
-    "altBosc": "Obra texturada inspirada en un bosc",
-    "altAbstractaTerracota": "Detall d’una obra abstracta texturada en tons terracota",
-    "altMuntanyaRelleu": "Obra de muntanya en relleu d’art.aneris"
+    "altEmpremtes": "Obra d’art.aneris en relleu amb l’empremta d’una mà i dos peuets de nadó en tons sorra",
+    "altMuntanyaRelleu": "Detall d’una obra de muntanyes en relleu blanc texturat",
+    "altDetallTextura": "Una mà tocant el relleu d’una obra d’art.aneris en tons sorra i granat",
+    "altBosc": "Obra texturada inspirada en un bosc"
   },
   "formes": {
     "eyebrow": "Com vols viure art.aneris?",
-    "titol": "Una mateixa idea. Quatre maneres de fer-la teva.",
+    "titol": "Una mateixa idea. Quatre maneres de fer-la realitat",
     "encarrecs": {
-      "etiqueta": "Encàrrecs",
+      "etiqueta": "Obres a mida",
       "titol": "Vull una obra única",
       "text": "Un record, un lloc o un moment convertit en una peça creada específicament per a tu.",
-      "enllac": "Encarregar"
+      "enllac": "Explicar-te la meva idea"
     },
     "rutes": {
       "etiqueta": "Rutes",
       "titol": "Vull immortalitzar una ruta",
-      "text": "La muntanya, el traçat i el significat d’un dia que no vols oblidar, reinterpretats en relleu.",
-      "enllac": "Transforma-la"
+      "text": "La muntanya, el traçat i el significat d’un dia que no vols oblidar.",
+      "enllac": "Enviar la meva ruta"
     },
     "regals": {
       "etiqueta": "Regals",
-      "titol": "Vull plasmar un moment vital",
-      "text": "Primer regales la història; després, la peça es crea amb qui la rebrà.",
-      "enllac": "Regala en dos temps"
+      "titol": "Vull plasmar un record",
+      "text": "Tu regales el començament. La peça es crea després amb qui la rebrà.",
+      "enllac": "Fer-ho en dos temps"
     },
     "cocreacio": {
       "etiqueta": "Co-creació",
       "titol": "Vull crear-la jo",
-      "text": "Aprèn la tècnica i crea una peça pròpia, sense plantilles idèntiques.",
-      "enllac": "Fem-ho plegats"
+      "text": "Aprèn, experimenta i crea textures amb la meva ajuda.",
+      "enllac": "Descobrir més"
     }
   },
   "proces": {
     "eyebrow": "De significat a matèria",
-    "titol": "Art sobre el qual tens una història a explicar.",
+    "titol": "Tu portes la història. Jo li dono forma.",
+    "text": "No necessites saber com ha de ser l’obra abans d’escriure’m.",
     "partida": {
       "titol": "El punt de partida",
-      "detall": "Record / ruta / lloc",
-      "cita": "És el nostre aniversari i vull regalar-li un trosset de mar, sempre hi va amb el nostre gosset Meeko quan necessita pau i desconnectar del soroll del dia a dia.",
+      "detall": "Lloc / ruta / record / sensació",
+      "cita": "És el nostre aniversari i vull regalar-li un trosset de mar. Sempre hi va amb el nostre gos Meeko quan necessita pau i desconnectar del soroll del dia a dia. Vull que aquesta sensació també la tingui a casa.",
       "hora": "09:41",
-      "peu": "M’expliques què hi ha darrere: què va passar, per què importa i què no vols perdre amb el temps."
+      "peu": "M’expliques què hi ha darrere: què va passar, per què és important i què no voldries perdre amb el temps."
     },
     "interpretacio": {
       "titol": "La interpretació",
-      "detall": "Forma / relleu / color",
+      "detall": "Textura / Forma / Color",
       "alt": "Detall amb petjades en una obra texturada inspirada en el mar",
-      "peu": "Busco una composició que conservi l’emoció sense explicar-la de manera literal: siluetes, capes, traços, recorreguts i textures."
+      "peu": "Busco una composició que conservi l’essència sense explicar-la de manera literal. Siluetes, capes, recorreguts, textures i colors converteixen la història en matèria."
     },
     "obra": {
       "titol": "L’obra",
       "detall": "Una peça única",
       "alt": "Sala d’estar amb una obra de mar texturada d’art.aneris",
-      "peu": "El record deixa de ser una imatge guardada al mòbil i es converteix en una peça que ocupa un lloc a casa teva."
+      "peu": "La teva història deixa de viure al teu cap o en una fotografia. Es transforma en una peça feta per ocupar un lloc a la teva llar."
     }
   },
   "rutes": {
-    "eyebrow": "La línia més diferencial",
+    "eyebrow": "Una línia que es converteix en relleu",
     "titol": "Hi ha rutes que duren molt més que el dia que les fas.",
-    "text": "Envia’m una ruta de Strava, un cim o un recorregut especial. El traçat, el perfil de la muntanya i allò que aquell dia va significar per a tu es converteixen en una peça única.",
-    "nota": "La ruta deixa de ser una dada dins d’una aplicació i passa a formar part de casa teva.",
-    "cta": "Envia’m una ruta",
+    "text": "Envia’m una ruta de Strava, un cim o un recorregut especial. El traçat, el perfil de la muntanya, el paisatge i allò que aquell dia va significar per a tu es converteixen en una peça única.",
+    "nota": "La ruta deixa de ser una dada guardada dins d’una aplicació.",
+    "cta": "Enviar la meva ruta",
     "pas1": {
-      "etiqueta": "Ruta",
-      "peu": "El recorregut original que dona inici a la peça.",
+      "etiqueta": "La ruta",
+      "peu": "El recorregut original dóna inici a la peça.",
       "alt": "Mapa amb el traçat original de la ruta"
     },
     "pas2": {
       "etiqueta": "Relleu i paisatge",
-      "peu": "La ruta es transforma en formes, volum i paisatge.",
+      "peu": "Transformo el traçat en una proposta de relleu, paisatge i color abans de portar-la al llenç.",
       "alt": "Interpretació del relleu i del paisatge a partir de la ruta"
     },
     "pas3": {
-      "etiqueta": "Obra final",
-      "peu": "La història acaba convertida en una peça per a casa teva.",
+      "etiqueta": "L’obra",
+      "peu": "El recorregut acaba convertit en una peça creada per recordar molt més que els quilòmetres.",
       "alt": "Obra final texturada inspirada en la ruta"
     },
     "resum": "Ruta → relleu i paisatge → obra",
     "segell": "La història continua a la paret"
   },
-  "empremtes": {
-    "eyebrow": "La col·lecció Empremtes",
-    "titol": "Hi ha records que comencen amb una empremta.",
-    "text": "La col·lecció Empremtes neix per conservar allò que sovint és petit, fràgil i immens alhora: les manetes i els peuets d’un bebè, o les potetes d’un gos o d’un gat que formen part de la teva història.",
-    "nota": "La petjada queda integrada dins la peça perquè el record sigui etern.",
-    "cta": "Encarrega la teva empremta",
+  "regals": {
+    "eyebrow": "Regal en dos temps",
+    "titol": "Regala el començament. L’obra la crearem després.",
+    "text": "Hi ha regals massa personals per decidir-los del tot per una altra persona. Si vols regalar una obra però prefereixes que qui la rebi pugui participar en la seva creació, pots regalar el començament de la història.",
+    "cta": "Regalar en dos temps",
     "pas1": {
-      "etiqueta": "Empremta",
-      "peu": "La marca real d’unes manetes, uns peuets o unes potetes."
+      "etiqueta": "La intenció",
+      "peu": "Un regal que explica que hi ha una obra per crear.",
+      "alt": "Regal embolicat en paper kraft amb flors seques i una xapa d’art.aneris"
     },
     "pas2": {
-      "etiqueta": "Relleu i matèria",
-      "peu": "La petjada s’integra dins la peça de manera delicada i orgànica."
+      "etiqueta": "Descobrim la història",
+      "peu": "La persona que el rep, o tots dos plegats, m’expliqueu què voldríeu convertir en una peça.",
+      "alt": "Dues persones al voltant d’una taula amb esbossos, fotografies i mostres de color"
     },
     "pas3": {
-      "etiqueta": "Obra final",
-      "peu": "El record passa a tenir cos i presència."
+      "etiqueta": "L’obra",
+      "peu": "Aquella història pren forma en una obra creada específicament per a ella.",
+      "alt": "Obra de muntanyes en relleu en tons terracota recolzada en una lleixa de fusta"
     },
-    "resum": "Empremta → relleu i matèria → obra",
-    "segell": "El record es queda a casa"
+    "resum": "Intenció → història → obra"
   },
   "tallers": {
-    "eyebrow": "Tallers i co-creació",
-    "titol": "No vindràs a copiar el mateix quadre que tothom.",
-    "text": "A cada taller aprens la tècnica, però la peça és teva. Diferents composicions, textures i colors perquè surtis amb una obra que realment tingui un lloc a casa teva.",
-    "nota": "No cal experiència prèvia. Jo t’acompanyo perquè puguis prendre decisions creatives pròpies sense quedar-te davant del llenç sense saber per on començar.",
-    "cta": "Vull venir a un taller",
-    "altMaterials": "Materials i eines utilitzats per crear art texturat",
-    "altPecaProces": "Peça texturada en procés en tons terracota",
-    "altDetallTextura": "Detall de textura i matèria d’una obra d’art.aneris",
-    "altProcesCreatiu": "Procés creatiu d’art.aneris"
+    "eyebrow": "Tallers | co-creació",
+    "titol": "No vindràs a repetir el mateix quadre que tothom.",
+    "text": "A cada taller aprendràs la tècnica, però la peça serà teva. Podràs decidir la composició, les textures i els colors perquè surtis amb una obra que realment vulguis penjar a casa.",
+    "nota": "No cal experiència prèvia.",
+    "acompanyament": "Jo t’acompanyo durant el procés perquè puguis prendre les teves pròpies decisions creatives sense quedar-te davant del llenç sense saber per on començar.",
+    "cta": "Vull fer un taller",
+    "altModelant": "Persona modelant la textura d’una obra amb una eina petita en un taller d’art.aneris",
+    "altObraTerracota": "Persona somrient amb la seva obra acabada, en tons terracota amb un detall daurat",
+    "altPeuets": "Pintant el peu d’un infant amb pintura daurada per estampar-lo al llenç, en un taller d’art.aneris",
+    "altObraCoure": "Persona somrient amb la seva obra acabada, en tons sorra amb una franja de coure"
   },
   "contacte": {
     "eyebrow": "Parlem-ne",
-    "titol": "Explica’m la teva idea i fem-la realitat",
+    "titol": "Explica’m què tens al cap. Busquem-li forma.",
     "textFort": "No cal que tinguis la idea clara.",
-    "text": "Pots escriure’m només amb una foto, una ruta, un lloc o una història. Jo t’ajudaré a trobar la millor manera de convertir-la en una peça o una experiència.",
+    "text": "Pots escriure’m només amb una fotografia, una ruta, un lloc, una empremta o una història. A partir d’aquí buscarem la millor manera de convertir-la en una peça o una experiència única.",
     "tambeEm": "També em pots trobar a",
     "instagramAria": "art.aneris a Instagram",
     "nom": {
@@ -175,7 +178,7 @@
       "avis": "Tria per on comencem.",
       "recordObra": "Convertir un lloc o sensació en obra",
       "ruta": "Convertir una ruta o muntanya en obra",
-      "momentVital": "Convertir un moment vital en obra",
+      "momentVital": "Convertir un record en obra",
       "taller": "Participar en un taller",
       "cocreacio": "Crear una obra plegats / co-creació",
       "altra": "Una altra idea"
@@ -208,19 +211,31 @@
     "titol": "Abans de començar.",
     "ideaClara": {
       "questio": "Necessito saber exactament com vull l’obra?",
-      "resposta": "No. Pots arribar només amb una història, una foto, una ruta o una sensació. Part del procés consisteix precisament a trobar la manera de convertir-ho en una proposta visual."
+      "resposta": "No. Pots arribar només amb una història, una fotografia, una ruta, un lloc o una sensació. Part del procés consisteix precisament a trobar la manera de transformar allò que significa per a tu en una proposta visual."
+    },
+    "encarrec": {
+      "questio": "Com funciona un encàrrec personalitzat?",
+      "resposta": "Primer m’expliques què vols convertir en una obra i què hi ha darrere. Després definim el punt de partida, el format i l’enfocament de la peça abans de començar a crear-la. No cal que tinguis totes les decisions preses abans d’escriure’m. En parlem i li donem forma plegats."
+    },
+    "preu": {
+      "questio": "Quant costa una obra?",
+      "resposta": "Cada peça és diferent. El pressupost depèn principalment de les mides, el format, la tècnica i el tipus de personalització. Quan m’expliquis què tens en ment, podré orientar-te sobre les opcions que millor encaixin amb la teva idea i preparar-te una proposta."
+    },
+    "termini": {
+      "questio": "Quant triga a estar preparada?",
+      "resposta": "Dependrà del tipus de peça i del moment en què facis l’encàrrec. Abans de començar t’indicaré el termini aproximat perquè sàpigues quan podràs tenir-la. Si la necessites per a una data concreta, explica-m’ho quan m’escriguis."
     },
     "strava": {
-      "questio": "Puc fer una obra a partir d’una ruta de Strava?",
-      "resposta": "Sí. Pots enviar una captura o la informació de la ruta. El recorregut serveix com a punt de partida per construir el relleu i connectar-lo amb el paisatge, el cim o la història del dia."
+      "questio": "Puc crear una obra a partir d’una ruta de Strava?",
+      "resposta": "Sí. Pots enviar-me la ruta o una captura amb la informació del recorregut. El traçat serà el punt de partida per construir la composició i connectar-lo amb el relleu, el paisatge i la història d’aquell dia."
     },
     "regal": {
       "questio": "Puc regalar una obra sense decidir-la per l’altra persona?",
-      "resposta": "Sí. El regal en dos temps permet regalar primer la intenció i l’experiència. Després, la peça es construeix amb la persona que la rebrà."
+      "resposta": "Sí. Amb el Regal en dos temps, tu regales el començament i l’obra es crea després amb la persona que la rebrà. Així pot participar en les decisions creatives i convertir una història seva en una peça feta especialment per a ella."
     },
     "tallers": {
       "questio": "Els tallers són per a persones amb experiència?",
-      "resposta": "No cal experiència prèvia. Aprendràs la tècnica i tindràs guia durant el procés, però les decisions creatives i la peça final seran teves."
+      "resposta": "No cal experiència prèvia. Aprendràs la tècnica i tindràs acompanyament durant tot el procés, però la composició, les textures, els colors i la peça final seran teus."
     }
   },
   "peu": {

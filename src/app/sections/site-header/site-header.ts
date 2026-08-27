@@ -24,7 +24,7 @@ export class SiteHeader {
     { href: '#idea', label: 'capcalera.idea' },
     { href: '#com-funciona', label: 'capcalera.comFunciona' },
     { href: '#rutes', label: 'capcalera.rutes' },
-    { href: '#empremtes', label: 'capcalera.empremtes' },
+    { href: '#regals', label: 'capcalera.regals' },
     { href: '#tallers', label: 'capcalera.tallers' },
   ];
 
