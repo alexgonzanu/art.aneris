@@ -29,6 +29,14 @@
 .hero__image {
   width: 100cqh !important;
   height: 100cqw !important;
+
+  /* El reset de styles.scss posa max-width: 100% a totes les imatges, i aquí
+   * fa mal: el 100% és l'amplada del hero, i aquesta imatge ha de fer-ne
+   * l'alçada. Mentre el hero és apaïsat no es nota —l'alçada és el costat
+   * curt i no toca el sostre—, però en vertical el retallava fins a deixar-la
+   * quadrada, i els 275px que faltaven per arribar a baix quedaven amb el
+   * fons --night del contenidor a la vista. */
+  max-width: none;
   transform-origin: top left;
   transform: rotate(90deg) translateY(-100%);
   object-fit: cover;
