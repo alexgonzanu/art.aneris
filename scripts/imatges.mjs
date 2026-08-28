@@ -21,7 +21,7 @@ const AMPLADES = [400, 800, 1200, 1600];
 
 /* La imatge de previsualització en compartir l'enllaç. Va en JPEG i no en WebP
  * perquè alguns robots de xarxes socials encara no el llegeixen. */
-const SOCIAL = { origen: 'hero-obra-granats.png', desti: 'social.jpg', amplada: 1200 };
+const SOCIAL = { origen: 'hero-obra-granats-degradat.jpg', desti: 'social.jpg', amplada: 1200 };
 const QUALITAT = 78;
 
 async function esVella(desti, origen) {
@@ -47,7 +47,7 @@ for (const nom of originals) {
 
     if (!(await esVella(desti, origen))) continue;
 
-    // withoutEnlargement: cap original passa dels 1536 px, així que les amplades
+    // withoutEnlargement: la majoria d'originals no passen dels 1600 px, així que les amplades
     // grans es queden a la mida real en comptes d'inventar-se píxels.
     await sharp(origen)
       .resize({ width: amplada, withoutEnlargement: true })

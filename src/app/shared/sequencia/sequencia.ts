@@ -24,11 +24,13 @@ export interface Seccio {
   readonly eyebrow: string;
   readonly titol: string;
   readonly text: string;
-  readonly nota: string;
+  /** Opcional: no totes les seccions tenen una frase de tancament abans del botó. */
+  readonly nota?: string;
   readonly cta: { readonly text: string; readonly intencio: Tipus };
   readonly passos: readonly Pas[];
   readonly resum: string;
-  readonly segell: string;
+  /** Opcional: el segell del final del plafó. */
+  readonly segell?: string;
 
   /** El fons de la secció; el del plafó és sempre el contrari. */
   readonly fons: 'sand' | 'paper';
@@ -41,7 +43,7 @@ export interface Seccio {
  * Una història explicada en tres passos: text a l'esquerra i, a la dreta, la
  * línia del temps 01 → 02 → 03 que es va dibuixant amb l'scroll.
  *
- * És la forma de les rutes i de les empremtes, que són la mateixa secció amb
+ * És la forma de les rutes i dels regals, que són la mateixa secció amb
  * un altre contingut. Si un dia n'hi ha una tercera, només caldrà escriure'n
  * les dades.
  */

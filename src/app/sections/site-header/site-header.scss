@@ -15,11 +15,21 @@
   padding-inline: 1.75rem;
 }
 
+/* No s'encongeix. És un element flexible dins de la barra i, si se'l deixa
+ * cedir espai a la navegació, el max-width: 100% del reset li retalla l'amplada
+ * mentre l'alçada es queda on és: el traç surt aixafat en comptes de petit. */
 .header__logo {
-  color: #fff;
-  font-family: var(--serif);
-  font-size: 2.1rem;
-  line-height: 1;
+  display: block;
+  flex: 0 0 auto;
+}
+
+/* Només se li diu l'alçada: l'amplada surt sola de les proporcions del fitxer,
+ * que és gairebé set vegades més ample que alt i s'empassaria la barra sencera
+ * si se'l deixés a la mida que porta. */
+.header__logo img {
+  display: block;
+  width: auto;
+  height: 1.9rem;
 }
 
 .header__nav {
@@ -156,8 +166,8 @@
     padding-inline: 2.5rem;
   }
 
-  .header__logo {
-    font-size: 2.3rem;
+  .header__logo img {
+    height: 2.2rem;
   }
 
   .header__nav {

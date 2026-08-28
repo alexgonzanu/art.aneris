@@ -15,10 +15,15 @@
 
         <p class="sequencia__text">{{ seccio.text | translate }}</p>
 
-        <p class="sequencia__nota">{{ seccio.nota | translate }}</p>
+        @if (seccio.nota; as nota) {
+          <p class="sequencia__nota">{{ nota | translate }}</p>
+        }
 
+        <!-- La fletxa la posa la plantilla i no el diccionari: així no se la llegeix
+             cap lector de pantalla i no s'ha de repetir a cada idioma. És el mateix
+             que fan els enllaços de la secció «formes». -->
         <a class="cta sequencia__cta" href="#contacte" [appIntencio]="seccio.cta.intencio">
-          {{ seccio.cta.text | translate }}
+          {{ seccio.cta.text | translate }} <span aria-hidden="true">→</span>
         </a>
       </div>
 
@@ -55,7 +60,9 @@
 
         <div class="sequencia__tancament">
           <p class="sequencia__resum">{{ seccio.resum | translate }}</p>
-          <p class="sequencia__segell">{{ seccio.segell | translate }}</p>
+          @if (seccio.segell; as segell) {
+            <p class="sequencia__segell">{{ segell | translate }}</p>
+          }
         </div>
       </div>
     </div>

@@ -10,8 +10,10 @@
 
         <p class="tallers__nota">{{ 'tallers.nota' | translate }}</p>
 
+        <p class="tallers__nota">{{ 'tallers.acompanyament' | translate }}</p>
+
         <a class="cta cta--contorn tallers__cta" href="#contacte" appIntencio="taller">
-          {{ 'tallers.cta' | translate }}
+          {{ 'tallers.cta' | translate }} <span aria-hidden="true">→</span>
         </a>
       </div>
 
@@ -19,10 +21,10 @@
         <figure class="tessella">
           <div class="tessella__marc">
             <img
-              ngSrc="taller-materials-eines"
+              ngSrc="taller-modelant-textura"
               fill
               sizes="(min-width: 768px) 24vw, 50vw"
-              [alt]="'tallers.altMaterials' | translate"
+              [alt]="'tallers.altModelant' | translate"
             />
           </div>
         </figure>
@@ -30,10 +32,10 @@
         <figure class="tessella">
           <div class="tessella__marc">
             <img
-              ngSrc="taller-peca-proces"
+              ngSrc="taller-obra-terracota"
               fill
               sizes="(min-width: 768px) 24vw, 50vw"
-              [alt]="'tallers.altPecaProces' | translate"
+              [alt]="'tallers.altObraTerracota' | translate"
             />
           </div>
         </figure>
@@ -41,10 +43,10 @@
         <figure class="tessella">
           <div class="tessella__marc">
             <img
-              ngSrc="taller-detall-textura"
+              ngSrc="taller-empremtes-peuets"
               fill
               sizes="(min-width: 768px) 24vw, 50vw"
-              [alt]="'tallers.altDetallTextura' | translate"
+              [alt]="'tallers.altPeuets' | translate"
             />
           </div>
         </figure>
@@ -52,10 +54,10 @@
         <figure class="tessella">
           <div class="tessella__marc">
             <img
-              ngSrc="taller-proces-creatiu"
+              ngSrc="taller-obra-coure"
               fill
               sizes="(min-width: 768px) 24vw, 50vw"
-              [alt]="'tallers.altProcesCreatiu' | translate"
+              [alt]="'tallers.altObraCoure' | translate"
             />
           </div>
         </figure>

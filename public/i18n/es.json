@@ -1,0 +1,261 @@
+{
+  "capcalera": {
+    "idioma": "Idioma",
+    "navegacio": "Navegación principal",
+    "obrirMenu": "Abrir menú",
+    "tancarMenu": "Cerrar menú",
+    "idea": "la idea",
+    "comFunciona": "cómo funciona",
+    "rutes": "rutas",
+    "regals": "regalos",
+    "tallers": "talleres",
+    "contacte": "contacto"
+  },
+  "hero": {
+    "titol": "Arte que nace\nde aquello que\nte hace sentir.",
+    "lead": "Obras de arte texturado hechas a mano a partir de tu historia",
+    "cta": "Descubre cómo funciona",
+    "alt": "Obra texturada en tonos granates de art.aneris"
+  },
+  "idea": {
+    "eyebrow": "La idea",
+    "titol": "Todo puede empezar\ncon un pequeño detalle.",
+    "text": "En art.aneris el punto de partida no es solo el recuerdo, es lo que te hizo sentir. El mar, Montserrat, un bosque o incluso aquello que resuena constantemente dentro de ti.",
+    "lloc": {
+      "etiqueta": "Un lugar",
+      "text": "Ese paisaje o espacio al que siempre querrás volver."
+    },
+    "ruta": {
+      "etiqueta": "Una ruta",
+      "text": "Un recorrido, una cima o un día que significó mucho más que los kilómetros."
+    },
+    "momentVital": {
+      "etiqueta": "Un recuerdo",
+      "text": "Un momento vital que no quieres que el tiempo borre."
+    },
+    "sensacio": {
+      "etiqueta": "Una sensación",
+      "text": "Un color, una etapa o una emoción que quizá no sabes explicar con palabras."
+    }
+  },
+  "galeria": {
+    "eyebrow": "Obras de art.aneris",
+    "titol": "Una historia puede tomar muchas formas.",
+    "altEmpremtes": "Obra de art.aneris en relieve con la huella de una mano y dos piececitos de bebé en tonos arena",
+    "altMuntanyaRelleu": "Detalle de una obra de montañas en relieve blanco texturado",
+    "altDetallTextura": "Una mano tocando el relieve de una obra de art.aneris en tonos arena y granate",
+    "altBosc": "Obra texturada inspirada en un bosque"
+  },
+  "formes": {
+    "eyebrow": "¿Cómo quieres vivir art.aneris?",
+    "titol": "Una misma idea. Cuatro maneras de hacerla realidad",
+    "encarrecs": {
+      "etiqueta": "Obras a medida",
+      "titol": "Quiero una obra única",
+      "text": "Un recuerdo, un lugar o un momento convertido en una pieza creada específicamente para ti.",
+      "enllac": "Contarte mi idea"
+    },
+    "rutes": {
+      "etiqueta": "Rutas",
+      "titol": "Quiero inmortalizar una ruta",
+      "text": "La montaña, el trazado y el significado de un día que no quieres olvidar.",
+      "enllac": "Enviar mi ruta"
+    },
+    "regals": {
+      "etiqueta": "Regalos",
+      "titol": "Quiero plasmar un recuerdo",
+      "text": "Tú regalas el comienzo. La pieza se crea después con quien la recibirá.",
+      "enllac": "Hacerlo en dos tiempos"
+    },
+    "cocreacio": {
+      "etiqueta": "Talleres",
+      "titol": "Quiero crearla yo",
+      "text": "Aprende, experimenta y crea texturas con mi ayuda.",
+      "enllac": "Descubrir más"
+    }
+  },
+  "proces": {
+    "eyebrow": "De significado a materia",
+    "titol": "Tú traes la historia. Yo le doy forma.",
+    "text": "No necesitas saber cómo tiene que ser la obra antes de escribirme.",
+    "partida": {
+      "titol": "El punto de partida",
+      "detall": "Lugar / ruta / recuerdo / sensación",
+      "cita": "Es nuestro aniversario y quiero regalarle un trocito de mar. Siempre va allí con nuestro perro Meeko cuando necesita paz y desconectar del ruido del día a día. Quiero que esa sensación también la tenga en casa.",
+      "hora": "09:41",
+      "peu": "Me cuentas qué hay detrás: qué pasó, por qué es importante y qué no querrías perder con el tiempo."
+    },
+    "interpretacio": {
+      "titol": "La interpretación",
+      "detall": "Textura / Forma / Color",
+      "alt": "Detalle con huellas en una obra texturada inspirada en el mar",
+      "peu": "Busco una composición que conserve la esencia sin explicarla de manera literal. Siluetas, capas, recorridos, texturas y colores convierten la historia en materia."
+    },
+    "obra": {
+      "titol": "La obra",
+      "detall": "Una pieza única",
+      "alt": "Salón con una obra de mar texturada de art.aneris",
+      "peu": "Tu historia deja de vivir en tu cabeza o en una fotografía. Se transforma en una pieza hecha para ocupar un lugar en tu hogar."
+    }
+  },
+  "rutes": {
+    "eyebrow": "Una línea que se convierte en relieve",
+    "titol": "Hay rutas que duran mucho más que el día que las haces.",
+    "text": "Envíame una ruta de Strava, una cima o un recorrido especial. El trazado, el perfil de la montaña, el paisaje y aquello que ese día significó para ti se convierten en una pieza única.",
+    "nota": "La ruta deja de ser un dato guardado dentro de una aplicación.",
+    "cta": "Enviar mi ruta",
+    "pas1": {
+      "etiqueta": "La ruta",
+      "peu": "El recorrido original da inicio a la pieza.",
+      "alt": "Mapa con el trazado original de la ruta"
+    },
+    "pas2": {
+      "etiqueta": "Relieve y paisaje",
+      "peu": "Transformo el trazado en una propuesta de relieve, paisaje y color antes de llevarla al lienzo.",
+      "alt": "Interpretación del relieve y del paisaje a partir de la ruta"
+    },
+    "pas3": {
+      "etiqueta": "La obra",
+      "peu": "El recorrido acaba convertido en una pieza creada para recordar mucho más que los kilómetros.",
+      "alt": "Obra final texturada inspirada en la ruta"
+    },
+    "resum": "Ruta → relieve y paisaje → obra",
+    "segell": "La historia continúa en la pared"
+  },
+  "regals": {
+    "eyebrow": "Regalo en dos tiempos",
+    "titol": "Regala el comienzo. La obra la crearemos después.",
+    "text": "Hay regalos demasiado personales para decidirlos del todo por otra persona. Si quieres regalar una obra pero prefieres que quien la reciba pueda participar en su creación, puedes regalar el comienzo de la historia.",
+    "cta": "Regalar en dos tiempos",
+    "pas1": {
+      "etiqueta": "La intención",
+      "peu": "Un regalo que explica que hay una obra por crear.",
+      "alt": "Regalo envuelto en papel kraft con flores secas y una chapa de art.aneris"
+    },
+    "pas2": {
+      "etiqueta": "Descubrimos la historia",
+      "peu": "La persona que lo recibe, o los dos juntos, me contáis qué querríais convertir en una pieza.",
+      "alt": "Dos personas alrededor de una mesa con bocetos, fotografías y muestras de color"
+    },
+    "pas3": {
+      "etiqueta": "La obra",
+      "peu": "Aquella historia toma forma en una obra creada específicamente para ella.",
+      "alt": "Obra de montañas en relieve en tonos terracota apoyada en una repisa de madera"
+    },
+    "resum": "Intención → historia → obra"
+  },
+  "tallers": {
+    "eyebrow": "Talleres | co-creación",
+    "titol": "No vendrás a repetir el mismo cuadro que todo el mundo.",
+    "text": "En cada taller aprenderás la técnica, pero la pieza será tuya. Podrás decidir la composición, las texturas y los colores para que salgas con una obra que realmente quieras colgar en casa.",
+    "nota": "No hace falta experiencia previa.",
+    "acompanyament": "Yo te acompaño durante el proceso para que puedas tomar tus propias decisiones creativas sin quedarte delante del lienzo sin saber por dónde empezar.",
+    "cta": "Quiero hacer un taller",
+    "altModelant": "Persona modelando la textura de una obra con una herramienta pequeña en un taller de art.aneris",
+    "altObraTerracota": "Persona sonriendo con su obra acabada, en tonos terracota con un detalle dorado",
+    "altPeuets": "Pintando el pie de un peque con pintura dorada para estamparlo en el lienzo, en un taller de art.aneris",
+    "altObraCoure": "Persona sonriendo con su obra acabada, en tonos arena con una franja de cobre"
+  },
+  "contacte": {
+    "eyebrow": "Hablemos",
+    "titol": "Cuéntame qué tienes en la cabeza. Busquémosle forma.",
+    "textFort": "No hace falta que tengas la idea clara.",
+    "text": "Puedes escribirme solo con una fotografía, una ruta, un lugar, una huella o una historia. A partir de ahí buscaremos la mejor manera de convertirla en una pieza o una experiencia única.",
+    "tambeEm": "También me puedes encontrar en",
+    "instagramAria": "art.aneris en Instagram",
+    "nom": {
+      "etiqueta": "Nombre *",
+      "marcador": "Tu nombre",
+      "avis": "Dime cómo te llamas."
+    },
+    "directe": {
+      "etiqueta": "Email o Instagram *",
+      "marcador": "tu@email.com o @usuario",
+      "avis": "Necesito una manera de responderte."
+    },
+    "tipus": {
+      "etiqueta": "¿Qué tienes en mente? *",
+      "avis": "Elige por dónde empezamos.",
+      "recordObra": "Convertir un lugar o sensación en obra",
+      "ruta": "Convertir una ruta o montaña en obra",
+      "momentVital": "Convertir un recuerdo en obra",
+      "taller": "Participar en un taller",
+      "cocreacio": "Crear una obra juntos / co-creación",
+      "altra": "Otra idea"
+    },
+    "detalls": {
+      "etiqueta": "Cuéntame más detalles *",
+      "marcador": "¿Qué recuerdo, lugar, persona, ruta o experiencia te gustaría transformar?",
+      "avis": "Cuéntamelo con tus palabras, aunque sea poco."
+    },
+    "data": {
+      "etiqueta": "¿Es para una fecha concreta?",
+      "opcional": "(opcional)",
+      "pista": "Si aún no lo sabes o no hay prisa, déjalo en blanco y cuéntamelo arriba."
+    },
+    "privacitat": {
+      "text": "Acepto que art.aneris utilice estos datos únicamente para responder a mi consulta. *",
+      "avis": "Necesito tu consentimiento para poder responderte."
+    },
+    "esquer": "No rellenes este campo",
+    "enviar": "Enviar mi idea",
+    "enviant": "Enviando…",
+    "estatRevisa": "Revisa los campos marcados antes de enviar.",
+    "estatFet": "Gracias. Tu historia ya está en camino. Te responderé lo antes posible.",
+    "estatSenseConfigurar": "Ahora mismo no puedo recibir el formulario. Escríbeme por Instagram a @art.aneris y te atiendo igual de bien.",
+    "estatError": "No se ha podido enviar el formulario. Inténtalo de nuevo o contacta por Instagram a @art.aneris.",
+    "lletraPetita": "Tu información no se utilizará para envíos comerciales sin tu consentimiento."
+  },
+  "preguntes": {
+    "eyebrow": "Preguntas frecuentes",
+    "titol": "Antes de empezar.",
+    "ideaClara": {
+      "questio": "¿Necesito saber exactamente cómo quiero la obra?",
+      "resposta": "No. Puedes llegar solo con una historia, una fotografía, una ruta, un lugar o una sensación. Parte del proceso consiste precisamente en encontrar la manera de transformar aquello que significa para ti en una propuesta visual."
+    },
+    "encarrec": {
+      "questio": "¿Cómo funciona un encargo personalizado?",
+      "resposta": "Primero me cuentas qué quieres convertir en una obra y qué hay detrás. Después definimos el punto de partida, el formato y el enfoque de la pieza antes de empezar a crearla. No hace falta que tengas todas las decisiones tomadas antes de escribirme. Lo hablamos y le damos forma juntos."
+    },
+    "preu": {
+      "questio": "¿Cuánto cuesta una obra?",
+      "resposta": "Cada pieza es diferente. El presupuesto depende principalmente de las medidas, el formato, la técnica y el tipo de personalización. Cuando me cuentes qué tienes en mente, podré orientarte sobre las opciones que mejor encajen con tu idea y prepararte una propuesta."
+    },
+    "termini": {
+      "questio": "¿Cuánto tarda en estar preparada?",
+      "resposta": "Dependerá del tipo de pieza y del momento en que hagas el encargo. Antes de empezar te indicaré el plazo aproximado para que sepas cuándo podrás tenerla. Si la necesitas para una fecha concreta, cuéntamelo cuando me escribas."
+    },
+    "strava": {
+      "questio": "¿Puedo crear una obra a partir de una ruta de Strava?",
+      "resposta": "Sí. Puedes enviarme la ruta o una captura con la información del recorrido. El trazado será el punto de partida para construir la composición y conectarlo con el relieve, el paisaje y la historia de aquel día."
+    },
+    "regal": {
+      "questio": "¿Puedo regalar una obra sin decidirla por la otra persona?",
+      "resposta": "Sí. Con el Regalo en dos tiempos, tú regalas el comienzo y la obra se crea después con la persona que la recibirá. Así puede participar en las decisiones creativas y convertir una historia suya en una pieza hecha especialmente para ella."
+    },
+    "tallers": {
+      "questio": "¿Los talleres son para personas con experiencia?",
+      "resposta": "No hace falta experiencia previa. Aprenderás la técnica y tendrás acompañamiento durante todo el proceso, pero la composición, las texturas, los colores y la pieza final serán tuyos."
+    }
+  },
+  "peu": {
+    "lema": "Arte texturado para convertir recuerdos, lugares, rutas y momentos vitales en piezas con significado.",
+    "instagramAria": "art.aneris en Instagram"
+  },
+  "calendari": {
+    "marcador": "Elige una fecha",
+    "dialeg": "Elige una fecha",
+    "mesAnterior": "Mes anterior",
+    "mesSeguent": "Mes siguiente",
+    "esborra": "Aún no lo sé / sin prisa"
+  },
+  "triador": {
+    "marcador": "Selecciona una opción"
+  },
+  "sequencia": {
+    "espera": "próximamente…"
+  },
+  "pujaAmunt": {
+    "aria": "Volver arriba"
+  }
+}

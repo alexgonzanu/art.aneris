@@ -25,6 +25,21 @@ export class Preguntes {
       resposta: 'preguntes.ideaClara.resposta',
     },
     {
+      id: 'encarrec',
+      questio: 'preguntes.encarrec.questio',
+      resposta: 'preguntes.encarrec.resposta',
+    },
+    {
+      id: 'preu',
+      questio: 'preguntes.preu.questio',
+      resposta: 'preguntes.preu.resposta',
+    },
+    {
+      id: 'termini',
+      questio: 'preguntes.termini.questio',
+      resposta: 'preguntes.termini.resposta',
+    },
+    {
       id: 'strava',
       questio: 'preguntes.strava.questio',
       resposta: 'preguntes.strava.resposta',

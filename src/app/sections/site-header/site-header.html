@@ -1,6 +1,12 @@
 <header class="header">
   <div class="header__bar shell">
-    <a class="header__logo" href="#inici">art.aneris</a>
+    <!-- El logotip va en un <img> pelat i no amb ngSrc: és un SVG, no passa
+         pel convertidor de `npm run imatges` i no té versions per amplada. Els
+         atributs width i height són els de la caixa del fitxer i només hi són
+         per reservar-li el lloc mentre baixa; qui mana la mida és el CSS. -->
+    <a class="header__logo" href="#inici">
+      <img src="/logo-aneris.svg" alt="art.aneris" width="521" height="83" />
+    </a>
 
     <nav class="header__nav" [attr.aria-label]="'capcalera.navegacio' | translate">
       @for (link of links; track link.href) {
